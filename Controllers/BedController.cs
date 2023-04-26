@@ -45,7 +45,7 @@ namespace Tracker.Controllers
                 context.Beds.Add(newBed);
                 context.SaveChanges();
 
-                return Redirect("/Employer");
+                return Redirect("/Seed");
             }
             else
             {
