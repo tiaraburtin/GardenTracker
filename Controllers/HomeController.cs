@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Tracker.Controllers
+namespace Home.Controllers
 {
-    public class SeedController : Controller
+    public class HomeController : Controller
     {
         public IActionResult Index()
         {
