@@ -1,6 +1,6 @@
 ﻿namespace Tracker.Models
 {
-    public class HardiZonecs
+    public class HardiZone
     {
     }
 }

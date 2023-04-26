@@ -1,4 +1,6 @@
-﻿namespace WaterReminder.Models
+﻿using System;
+
+namespace Tracker.Models
 {
     public class Bed
     {

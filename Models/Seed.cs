@@ -1,4 +1,4 @@
-﻿namespace WaterReminder.Models
+﻿namespace Tracker.Models
 {
     public class Seed
     {
@@ -10,7 +10,7 @@
 
         public int BedId { get; set; }
 
-        public Bed Bed { get; set; }    
+        public List<Bed> Beds { get; set; }    
 
 
         public Seed(string name, string hardiZone, string waterSchedule)

@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Tracker.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString = "server=localhost;user=newuser;password=tracker;database=tracker";
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 32));
 
 var app = builder.Build();
 

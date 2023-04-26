@@ -3,7 +3,6 @@ using Tracker.Models;
 
 
 namespace Tracker.ViewModels
-
 {
     public class AddSeedViewModel 
     {

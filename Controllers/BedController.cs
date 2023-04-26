@@ -42,7 +42,7 @@ namespace Tracker.Controllers
                     Name = addBedViewModel.Name,
                     DatePlanted = addBedViewModel.DatePlanted
                 };
-                context.Employers.Add(newBed);
+                context.Beds.Add(newBed);
                 context.SaveChanges();
 
                 return Redirect("/Employer");
@@ -52,7 +52,5 @@ namespace Tracker.Controllers
                 return View("Create", addBedViewModel);
             }
         }
-
-    }
     }
 }
