@@ -1,0 +1,8 @@
+C:\Users\7teli\Desktop\LaunchCode\C_Sharp\unit3Project\Tracker\obj\Debug\net6.0\Tracker.csproj.AssemblyReference.cache
+C:\Users\7teli\Desktop\LaunchCode\C_Sharp\unit3Project\Tracker\obj\Debug\net6.0\Tracker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\7teli\Desktop\LaunchCode\C_Sharp\unit3Project\Tracker\obj\Debug\net6.0\Tracker.AssemblyInfoInputs.cache
+C:\Users\7teli\Desktop\LaunchCode\C_Sharp\unit3Project\Tracker\obj\Debug\net6.0\Tracker.AssemblyInfo.cs
+C:\Users\7teli\Desktop\LaunchCode\C_Sharp\unit3Project\Tracker\obj\Debug\net6.0\Tracker.csproj.CoreCompileInputs.cache
+C:\Users\7teli\Desktop\LaunchCode\C_Sharp\unit3Project\Tracker\obj\Debug\net6.0\Tracker.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\7teli\Desktop\LaunchCode\C_Sharp\unit3Project\Tracker\obj\Debug\net6.0\Tracker.RazorAssemblyInfo.cache
+C:\Users\7teli\Desktop\LaunchCode\C_Sharp\unit3Project\Tracker\obj\Debug\net6.0\Tracker.RazorAssemblyInfo.cs

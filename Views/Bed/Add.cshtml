@@ -1,0 +1,28 @@
+﻿@using Tracker.ViewModels
+@model AddBedViewModel
+
+
+
+<h1>Add New Garden Bed</h1>
+
+<form asp-controller="Bed" asp-action="ProcessAddBedForm" method="post">
+
+    <div class="form-group">
+        <label asp-for="Name">Name of Bed</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        <label asp-for="DatePlanted">Date Planted</label>
+        <input asp-for="DatePlanted" class="form-control" />
+        <span asp-validation-for="DatePlanted" class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <input type="submit" value="Add Garden Bed" />
+
+</form>
