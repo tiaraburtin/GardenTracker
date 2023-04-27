@@ -8,16 +8,14 @@
 
         public string WaterSchedule { get; set; }
 
-        public int BedId { get; set; }
-
-        public List<Bed> Beds { get; set; }    
-
+        public ICollection<Bed> Beds { get; set; }    
 
         public Seed(string name, string hardiZone, string waterSchedule)
         {
             Name = name;
             HardiZone = hardiZone;
             WaterSchedule = waterSchedule;
+            List<Bed> beds = new List<Bed>();
         }
     }
 }

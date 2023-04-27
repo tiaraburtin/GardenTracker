@@ -8,12 +8,13 @@ namespace Tracker.ViewModels
     {
     public string? Name { get; set; }
     public int? BedId { get; set; }
+    public string? HardiZone { get; set; }
 
-    public List<SelectListItem>? HardiZone { get; set; }
+    public string? WaterSchedule { get; set; }
 
     public List<SelectListItem>? Beds { get; set; }
 
-        public AddSeedViewModel(Seed theSeed, List<Bed> possibleBeds, List<HardiZone> possibleHardiZones) 
+        public AddSeedViewModel(Seed theSeed, List<Bed> possibleBeds) 
         {
             Beds = new List<SelectListItem>();
             foreach (var bed in possibleBeds )

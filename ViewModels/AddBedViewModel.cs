@@ -6,7 +6,6 @@ namespace Tracker.ViewModels
     public class AddBedViewModel
     {
         public string? Name { get; set; }
-        public int? SeedId { get; set; }
 
         public DateTime DatePlanted { get; set; }
         public List<SelectListItem>? Seeds { get; set; }

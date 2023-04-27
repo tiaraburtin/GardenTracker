@@ -8,12 +8,14 @@ namespace Tracker.Models
         public string Name { get; set; }
         public DateTime DatePlanted { get; set; }
 
-        public List<Seed> Seeds { get; set; }
+        public ICollection<Seed> Seeds { get; set; }
+
 
     public Bed(string name, DateTime datePlanted)
         {
             Name = name;
             DatePlanted = datePlanted;
+            Seeds = new List<Seed>();   
         }
     public Bed() 
         { 

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Tracker.Models;
 using Tracker.ViewModels;
 using Tracker.Data;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Tracker.Controllers
 {
@@ -52,5 +53,21 @@ namespace Tracker.Controllers
                 return View("Create", addBedViewModel);
             }
         }
+
+            //public IActionResult Delete()
+            //{
+            //    return View();
+            //}
+
+            //PublicKey IActionResult Delete(int[] Ids)
+            //{
+            //foreach (int item in Ids)
+            //{
+                
+            //}
+
+            //    return Redirect("/Index");
+            //}
+        
     }
 }
