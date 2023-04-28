@@ -15,7 +15,11 @@
             Name = name;
             HardiZone = hardiZone;
             WaterSchedule = waterSchedule;
-            List<Bed> beds = new List<Bed>();
+            Beds = new List<Bed>();
+        }
+        public Seed() 
+        { 
+            Beds = new List<Bed>();
         }
     }
 }

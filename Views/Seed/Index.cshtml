@@ -1,1 +1,26 @@
-﻿
+﻿@using Tracker.Models
+@model List<Seed>
+
+<div>
+	@if (Model.Count == 0)
+	{
+		<p>No Seeds Yet!</p>
+	}
+
+
+else
+    {
+<table class="table">
+    <tr>
+        <th>Name</th>
+    </tr>
+    @foreach (var seed in Model)
+    {
+        <tr>
+            <td><a asp-controller="Seed" asp-action="Detail" asp-route-id="@seed.Id">@seed.Name</a></td>
+           
+        </tr>
+    }
+</table>
+    } </div>
+

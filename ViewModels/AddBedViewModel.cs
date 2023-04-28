@@ -5,22 +5,26 @@ namespace Tracker.ViewModels
 {
     public class AddBedViewModel
     {
+        public int BedId { get; set; }  
         public string? Name { get; set; }
 
+        public Seed? Seed { get; set; }
         public DateTime DatePlanted { get; set; }
-        public List<SelectListItem>? Seeds { get; set; }
+        public List<SelectListItem>? Beds { get; set; }
 
-        public AddBedViewModel(Bed theBed, List<Seed> possibleSeeds, DateTime DatePlanted) 
+        public AddBedViewModel(Seed theSeed, List<Bed> possibleBeds) 
         {
-            Seeds = new List<SelectListItem>();
-            foreach (var seed in possibleSeeds) 
+            Beds = new List<SelectListItem>();
+            foreach (var bed in possibleBeds)
             {
-                Seeds.Add(new SelectListItem
+                Beds.Add(new SelectListItem
                 {
-                    Value = seed.Id.ToString(),
-                    Text = seed.Name,
+                    Value = bed.Id.ToString(),
+                    Text = bed.Name,
                 });
             }
+
+            Seed = theSeed;
         }
 
         public AddBedViewModel() 

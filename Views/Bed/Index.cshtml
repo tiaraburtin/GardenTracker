@@ -13,6 +13,7 @@ else
         <tr>
             <th>Id
             <th>Garden Bed</th>
+            <th>Date Planted</th>
         </tr>
         @foreach (Bed bed in Model)
         {
@@ -21,6 +22,7 @@ else
 
 
                 <td><a asp-controller="Bed" asp-action="About" asp-route-id="@bed.Id">@bed.Name</a></td>
+                <td>@bed.DatePlanted</td>
             </tr>
         }
     </table>

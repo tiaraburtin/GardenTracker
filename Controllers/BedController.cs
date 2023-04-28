@@ -15,59 +15,37 @@ namespace Tracker.Controllers
     {
         private TrackerDbContext context;
 
-        public BedController (TrackerDbContext dbContext)
+        public BedController(TrackerDbContext dbContext)
         {
             context = dbContext;
         }
         [HttpGet]
         public IActionResult Index()
         {
-            List<Bed> beds = context.Beds.ToList(); 
+            List<Bed> beds = context.Beds.ToList();
             return View(beds);
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult Add()
         {
-           AddSeedViewModel addSeedViewModel = new AddSeedViewModel();
-            return View(addSeedViewModel);
+            Bed bed = new Bed();
+            return View();
         }
 
         [HttpPost]
-        public IActionResult ProcessAddBedForm(AddBedViewModel addBedViewModel)
+        public IActionResult AddBed(Bed bed)
         {
             if (ModelState.IsValid)
             {
-                Bed newBed = new Bed
-                {
-                    Name = addBedViewModel.Name,
-                    DatePlanted = addBedViewModel.DatePlanted
-                };
-                context.Beds.Add(newBed);
+                context.Beds.Add(bed);
                 context.SaveChanges();
 
-                return Redirect("/Seed");
+                return Redirect("/Bed/");
             }
-            else
-            {
-                return View("Create", addBedViewModel);
-            }
+            return View("Add", bed);
         }
-
-            //public IActionResult Delete()
-            //{
-            //    return View();
-            //}
-
-            //PublicKey IActionResult Delete(int[] Ids)
-            //{
-            //foreach (int item in Ids)
-            //{
-                
-            //}
-
-            //    return Redirect("/Index");
-            //}
-        
     }
-}
+
+}        
+
