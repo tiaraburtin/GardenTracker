@@ -1,0 +1,52 @@
+﻿<Properties StartupConfiguration="{6D03547B-F10B-4331-9D19-2856BBE811E0}|WaterReminder">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+    <Files>
+      <File FileName="Controllers/BedController.cs" Line="15" Column="16" />
+      <File FileName="Controllers/SeedController.cs" Line="11" Column="16" />
+      <File FileName="Data/TrackerDbContext.cs" Line="34" Column="10" />
+      <File FileName="Views/Bed/Add.cshtml" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="49" Column="22" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="41" Column="53" />
+      <File FileName="Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="Areas/Identity/Pages/Account/Login.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/Identity/Pages/Account/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/Identity/Pages/Account/Login.cshtml.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Tracker" expanded="True">
+            <Node name="Tracker" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Areas" expanded="True">
+                <Node name="Identity" expanded="True">
+                  <Node name="Pages" expanded="True">
+                    <Node name="Account" expanded="True">
+                      <Node name="Login.cshtml" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Bed" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Tracker PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -8,9 +8,11 @@ using Tracker.Models;
 using Tracker.ViewModels;
 using Tracker.Data;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Tracker.Controllers
 {
+    [Authorize]
     public class BedController : Controller
     {
         private TrackerDbContext context;

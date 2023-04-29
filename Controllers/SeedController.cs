@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography.X509Certificates;
 using Tracker.Data;
@@ -7,6 +8,7 @@ using Tracker.ViewModels;
 
 namespace Tracker.Controllers
 {
+    [Authorize]
     public class SeedController : Controller
     {
         private TrackerDbContext context;
