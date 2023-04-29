@@ -1,5 +1,5 @@
-﻿
-using System;
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Tracker.Models;
 using Tracker.ViewModels;
 using Tracker.Data;
-using System.Security.Cryptography.X509Certificates;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Tracker.Controllers
 {
@@ -45,7 +46,21 @@ namespace Tracker.Controllers
             }
             return View("Add", bed);
         }
-    }
 
-}        
+
+
+        public IActionResult Detail(int id)
+        {
+            Bed theBed = context.Beds
+            .Include(j => j.Seeds)
+            .Single(j => j.Id == id);
+
+            //Load THE SEEDS on the view model
+
+            BedDetailViewModel viewModel = new BedDetailViewModel(theBed);
+            return View(viewModel);
+        }
+    }
+}
+      
 

@@ -1,0 +1,19 @@
+﻿@model Tracker.ViewModels.AddSeedsToBedViewModel
+
+<h1>Add Seed to Garden Bed: @Model.Bed.Name</h1>
+
+<form asp-controller="Seed" asp-action="ProcessAddSeedToBed" method="post">
+    <input type="hidden" value="@Model.Bed.Id" name="BedId" />
+
+    <div class="form-group">
+        <label asp-for="SeedId">Seed</label>
+
+
+@*use conditional in the creation of drop down list*@
+        <select asp-for="SeedId" asp-items="Model.Seeds"></select>
+
+        <span asp-validation-for="SeedId"></span>
+    </div>
+
+    <input type="submit" value="Add Seed" />
+</form>

@@ -1,1 +1,15 @@
-﻿
+﻿@model Tracker.ViewModels.BedDetailViewModel
+
+<h1>@Model.Name</h1>
+
+<table class="table">
+   
+	<p>@Model.SeedText</p>
+
+  
+
+</table>
+
+<a asp-controller="Seed" asp-action="AddSeedToBed" asp-route-id="@Model.BedId">Add seeds to this bed</a>
+
+
