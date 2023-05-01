@@ -31,7 +31,7 @@ namespace Tracker.Migrations
 
                     b.HasIndex("SeedsId");
 
-                    b.ToTable("BedSeed");
+                    b.ToTable("BedSeed", (string)null);
                 });
 
             modelBuilder.Entity("Tracker.Models.Bed", b =>
@@ -58,15 +58,7 @@ namespace Tracker.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("HardiZone")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("WaterSchedule")
                         .IsRequired()
                         .HasColumnType("longtext");
 

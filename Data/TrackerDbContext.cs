@@ -12,7 +12,6 @@ namespace Tracker.Data
         public DbSet<Seed>? Seeds { get; set; }
         public DbSet<Bed>?  Beds { get; set; }
 
-
         public TrackerDbContext(DbContextOptions<TrackerDbContext> options)
             : base(options)
         {

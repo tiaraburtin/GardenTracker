@@ -31,4 +31,16 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapControllerRoute(
+	name: "bed",
+	pattern: "Bed/{action}/{id?}",
+	defaults: new { controller = "Bed", action = "Index" }
+);
+
+app.MapControllerRoute(
+	name: "seed",
+	pattern: "Seed/{action}/{id?}",
+	defaults: new { controller = "Seed", action = "Index" }
+);
+
 app.Run();

@@ -9,16 +9,19 @@ namespace Tracker.Models
 
         public DateTime DatePlanted { get; set; }
 
+        public string HardinessZone { get; set; }   
+
         public ICollection<Seed> Seeds { get; set; }
 
 
-    public Bed(string name, DateTime datePlanted)
+    public Bed(string name, DateTime datePlanted, string hardinessZone)
         {
             Name = name;
             DatePlanted = datePlanted;
-            Seeds = new List<Seed>();   
+            Seeds = new List<Seed>();
+            HardinessZone = hardinessZone;
         }
-    public Bed() 
+         public Bed() 
         {
             Seeds = new List<Seed>();
         }    
