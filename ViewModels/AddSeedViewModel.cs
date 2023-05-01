@@ -16,6 +16,10 @@ namespace Tracker.ViewModels
 
         public Seed? Seed { get; set; }
 
+        public DateTime DatePlanted { get; set; }
+
+        public string HardinessZone { get; set; }
+
         public List<SelectListItem>? Seeds { get; set; }
 
         public AddSeedViewModel(Bed theBed, List<Seed> possibleSeeds)
