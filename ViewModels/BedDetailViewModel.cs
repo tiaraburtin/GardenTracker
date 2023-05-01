@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics.Tracing;
 using Tracker.Models;
 
@@ -7,12 +8,11 @@ namespace Tracker.ViewModels
     public class BedDetailViewModel
     {
         public int BedId { get; set; }
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         public Bed Bed { get; set; }
 
         public string SeedText { get; set; }
-
 
         public BedDetailViewModel(Bed theBed)
         {
@@ -30,10 +30,6 @@ namespace Tracker.ViewModels
                 }
             }
             Bed = theBed;
-        }
-        public BedDetailViewModel()
-        {
-
         }
     }
 }

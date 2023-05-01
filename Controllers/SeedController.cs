@@ -8,21 +8,26 @@ using Tracker.Models;
 using Tracker.ViewModels;
 using Tracker.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Tracker.Controllers
 {
     public class SeedController : Controller
     {
         private TrackerDbContext context;
+        private readonly ILogger<SeedController> _logger;
 
-        public SeedController(TrackerDbContext dbContext)
+        public SeedController(TrackerDbContext dbContext, ILogger<SeedController> logger)
         {
             context = dbContext;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
+
 
         public IActionResult Index()
         {
-            List<Seed> seeds = context.Seeds.ToList();
+			List<Seed> seeds = context.Seeds.ToList();
+			//List<Seed> seeds = context.Seeds.ToList();
             return View(seeds);
         }
 
@@ -54,13 +59,13 @@ namespace Tracker.Controllers
 
             List<Seed> possibleSeeds = context.Seeds.ToList();
 
-            AddSeedsToBedViewModel viewModel = new AddSeedsToBedViewModel(theBed, possibleSeeds);
+            AddSeedViewModel viewModel = new AddSeedViewModel(theBed, possibleSeeds);
             return View(viewModel);
         }
 
         [HttpPost]
-        public IActionResult ProcessAddSeedToBed(AddSeedsToBedViewModel viewModel)
-            {
+        public IActionResult ProcessAddSeedToBed(AddSeedViewModel viewModel)
+        {
             if (ModelState.IsValid)
             {
                 int bedId = viewModel.BedId;
@@ -78,14 +83,44 @@ namespace Tracker.Controllers
 
                 return Redirect("/Bed/Detail/" + bedId);
             }
-
             return View(viewModel);
         }
 
-        public IActionResult Detail(int id)
+		public IActionResult Delete()
+		{
+			ViewBag.seeds = context.Seeds.ToList();
+
+			return View();
+		}
+
+		[HttpPost]
+		public IActionResult DeleteSeed(int[] seedIds)
+		{
+			foreach (int seedId in seedIds)
+			{
+				Seed theSeed = context.Seeds.Find(seedId);
+				context.Seeds.Remove(theSeed);
+			}
+
+			context.SaveChanges();
+
+			return Redirect("/Seed");
+		}
+
+
+		public IActionResult Detail(int id)
         {
-            Seed theSeed = context.Seeds.Include(j=> j.Beds).Where(s =>s.Id == id).First();
-            return View(theSeed);
+            _logger.LogInformation($"Detail method called with id = {id}");
+
+			Seed theSeed = context.Seeds
+		   .Include(j => j.Beds)
+		   .FirstOrDefault(j =>j.Id == id);
+
+            SeedDetailViewModel viewModel = new SeedDetailViewModel(theSeed);
+
+			return View(viewModel);
+
+		
         }
     }
 }

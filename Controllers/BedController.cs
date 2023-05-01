@@ -47,6 +47,61 @@ namespace Tracker.Controllers
             return View("Add", bed);
         }
 
+		[HttpGet]
+		public IActionResult AddBedToSeed(int id)
+		{
+			Seed theSeed = context.Seeds.Find(id);
+
+			List<Bed> possibleBeds = context.Beds.ToList();
+
+			AddBedViewModel viewModel = new AddBedViewModel(theSeed, possibleBeds);
+			return View(viewModel);
+		}
+
+        [HttpPost]
+        public IActionResult ProcessAddBedToSeed(AddBedViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                int bedId = viewModel.BedId;
+                int seedId = viewModel.SeedId;
+
+                //is binding the seedId to the BedId from the viewModel
+                //
+                Seed theSeed = context.Seeds.Where(j => j.Id == seedId).First();
+
+                Bed theBed = context.Beds.Where(s => s.Id == bedId).First();
+
+                theSeed.Beds.Add(theBed);
+
+                context.SaveChanges();
+
+                return Redirect("/Seed/Detail/" + seedId);
+            }
+            return View(viewModel);
+            
+        }
+        public IActionResult Delete()
+        {
+            ViewBag.beds = context.Beds.ToList();
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult DeleteBed(int[] bedIds)
+        {
+            foreach (int bedId in bedIds)
+            {
+                Bed theBed = context.Beds.Find(bedId);
+                context.Beds.Remove(theBed);
+            }
+
+            context.SaveChanges();
+
+            return Redirect("/Bed");
+        }
+
 
 
         public IActionResult Detail(int id)

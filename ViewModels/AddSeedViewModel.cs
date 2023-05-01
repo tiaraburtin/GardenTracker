@@ -6,14 +6,15 @@ namespace Tracker.ViewModels
 {
     public class AddSeedViewModel 
     {
-    public string Name { get; set; }
-    public int SeedId { get; set; }
-    public int BedId { get; set; }
-    public string? HardiZone { get; set; }
+		public int SeedId { get; set; }
 
-    public string? WaterSchedule { get; set; }
+        public string? Name { get; set; }
 
-    public Bed? Bed { get; set; }
+        public int BedId { get; set; }
+
+        public Bed? Bed { get; set; }
+
+        public Seed? Seed { get; set; }
 
         public List<SelectListItem>? Seeds { get; set; }
 

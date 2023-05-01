@@ -11,7 +11,7 @@ using Tracker.Data;
 namespace Tracker.Migrations
 {
     [DbContext(typeof(TrackerDbContext))]
-    [Migration("20230428035620_InitialMigration")]
+    [Migration("20230501034432_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -34,7 +34,7 @@ namespace Tracker.Migrations
 
                     b.HasIndex("SeedsId");
 
-                    b.ToTable("BedSeed");
+                    b.ToTable("BedSeed", (string)null);
                 });
 
             modelBuilder.Entity("Tracker.Models.Bed", b =>
@@ -45,6 +45,10 @@ namespace Tracker.Migrations
 
                     b.Property<DateTime>("DatePlanted")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("HardinessZone")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -61,15 +65,7 @@ namespace Tracker.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("HardiZone")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("WaterSchedule")
                         .IsRequired()
                         .HasColumnType("longtext");
 

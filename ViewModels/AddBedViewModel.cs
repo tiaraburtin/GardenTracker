@@ -8,8 +8,14 @@ namespace Tracker.ViewModels
         public int BedId { get; set; }  
         public string? Name { get; set; }
 
+        public int SeedId { get; set; }
+
+        public Bed? Bed { get; set; }    
+
         public Seed? Seed { get; set; }
         public DateTime DatePlanted { get; set; }
+
+        public string HardinessZone { get; set; }
         public List<SelectListItem>? Beds { get; set; }
 
         public AddBedViewModel(Seed theSeed, List<Bed> possibleBeds) 

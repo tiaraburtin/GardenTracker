@@ -1,6 +1,6 @@
-﻿@model Tracker.ViewModels.AddSeedsToBedViewModel
+﻿@model Tracker.ViewModels.AddSeedViewModel
 
-<h1>Add Seed to Garden Bed: @Model.Bed.Name</h1>
+<h1>Add Seed to @Model.Bed.Name Garden Bed: </h1>
 
 <form asp-controller="Seed" asp-action="ProcessAddSeedToBed" method="post">
     <input type="hidden" value="@Model.Bed.Id" name="BedId" />
@@ -15,5 +15,6 @@
         <span asp-validation-for="SeedId"></span>
     </div>
 
-    <input type="submit" value="Add Seed" />
+    <input type="submit" value="Add Seed to Bed" class="btn btn-danger" />
 </form>
+

@@ -1,12 +1,14 @@
-﻿@model Tracker.Models.Seed
+﻿@model Tracker.ViewModels.SeedDetailViewModel
 
 <h1>Seed: @Model.Name</h1>
 
+
 <table class="table">
 
-	
+	<p>Garden Bed: @Model.BedText</p>
 
-	<p>Hardiness Zone: @Model.HardiZone</p>
-	<p>Watering Schedule: @Model.WaterSchedule</p>
+
 
 </table>
+
+<a asp-controller="Bed" asp-action="AddBedToSeed" asp-route-id="@Model.SeedId">Add garden beds to this seed</a>
