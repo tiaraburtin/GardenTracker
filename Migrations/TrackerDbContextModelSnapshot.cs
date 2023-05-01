@@ -40,13 +40,6 @@ namespace Tracker.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DatePlanted")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("HardinessZone")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -61,6 +54,13 @@ namespace Tracker.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("DatePlanted")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("HardinessZone")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .IsRequired()
