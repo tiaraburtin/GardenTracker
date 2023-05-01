@@ -11,7 +11,7 @@ using Tracker.Data;
 namespace Tracker.Migrations
 {
     [DbContext(typeof(TrackerDbContext))]
-    [Migration("20230430052526_InitialMigration")]
+    [Migration("20230501034432_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -45,6 +45,10 @@ namespace Tracker.Migrations
 
                     b.Property<DateTime>("DatePlanted")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("HardinessZone")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .IsRequired()

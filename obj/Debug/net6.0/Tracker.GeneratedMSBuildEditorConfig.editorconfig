@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\7teli\Desktop\LaunchCode\C_Sharp\unit3Project\Tracker
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/7teli/Desktop/LaunchCode/C_Sharp/unit3Project/Tracker/Views/Appointments/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/7teli/Desktop/LaunchCode/C_Sharp/unit3Project/Tracker/Views/Bed/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmVkXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

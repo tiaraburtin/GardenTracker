@@ -15,7 +15,7 @@ else
         <tr>
             <th>Id
             <th>Garden Bed</th>
-            <th>Date Planted</th>
+            
             <th>Delete</th>
         </tr>
         @foreach (var bed in Model)
@@ -25,7 +25,7 @@ else
 
 
                 <td><a asp-controller="Bed" asp-action="Detail" asp-route-id="@bed.Id">@bed.Name</a></td>
-                <td>@bed.DatePlanted</td>
+                
            
 
                 <td>
@@ -35,7 +35,7 @@ else
         }
     </table>
 }
-    <p><a asp-controller="Seed" asp-action="Add" class="btn btn-danger">Add Garden</a></p>
+    <p><a asp-controller="Bed" asp-action="Add" class="btn btn-danger">Add Garden</a></p>
 
     <button type="submit" formaction="@Url.Action("DeleteBed", "Bed")" class="btn btn-danger">Delete Selected Gardens</button>
 

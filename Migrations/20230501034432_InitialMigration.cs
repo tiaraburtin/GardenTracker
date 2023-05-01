@@ -23,7 +23,9 @@ namespace Tracker.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    DatePlanted = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    DatePlanted = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    HardinessZone = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {

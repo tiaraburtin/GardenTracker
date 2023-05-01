@@ -43,6 +43,10 @@ namespace Tracker.Migrations
                     b.Property<DateTime>("DatePlanted")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("HardinessZone")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
