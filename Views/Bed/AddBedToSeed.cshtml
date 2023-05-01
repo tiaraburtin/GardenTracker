@@ -1,5 +1,6 @@
 ﻿@model Tracker.ViewModels.AddBedViewModel
 
+
 <h1>Add Garden Bed to @Model.Seed.Name seed: </h1>
 
 <form asp-controller="Bed" asp-action="ProcessAddBedToSeed" method="post">
@@ -8,7 +9,7 @@
     <div class="form-group">
         <label asp-for="BedId">Bed</label>
 
-
+        <p>Seed: @Model.SeedText</p>
         @*use conditional in the creation of drop down list*@
         <select asp-for="BedId" asp-items="Model.Beds"></select>
         

@@ -13,11 +13,14 @@ namespace Tracker.ViewModels
         public Bed? Bed { get; set; }    
 
         public Seed? Seed { get; set; }
-       
+
+        public string SeedText { get; set; }
+
         public List<SelectListItem>? Beds { get; set; }
 
         public AddBedViewModel(Seed theSeed, List<Bed> possibleBeds) 
         {
+           
             Beds = new List<SelectListItem>();
             foreach (var bed in possibleBeds)
             {
@@ -27,6 +30,7 @@ namespace Tracker.ViewModels
                     Text = bed.Name,
                 });
             }
+
 
             Seed = theSeed;
         }
