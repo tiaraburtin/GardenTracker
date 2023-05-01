@@ -1041,11 +1041,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\7teli\\Desktop\\LaunchCode\\newSetup\\GardenTracker\\Tracker.csproj",
+      "projectUniqueName": "C:\\Users\\7teli\\Desktop\\LaunchCode\\FinalProject\\GardenTracker\\Tracker.csproj",
       "projectName": "Tracker",
-      "projectPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\newSetup\\GardenTracker\\Tracker.csproj",
+      "projectPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\FinalProject\\GardenTracker\\Tracker.csproj",
       "packagesPath": "C:\\Users\\7teli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\newSetup\\GardenTracker\\obj\\",
+      "outputPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\FinalProject\\GardenTracker\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\7teli\\AppData\\Roaming\\NuGet\\NuGet.Config",

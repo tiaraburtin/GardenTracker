@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KvwH8HHt9TbnrzjL4iL+6CPXV/mTmjGZKgFRZXF++3eWQB+fw/OTUBkdkYq0hoZB/ggcYDAirIWw8FqqVXFZfw==",
+  "dgSpecHash": "xOOCdTVQM++GN/XA7QS25P3YCIFedTfR02Z6PnpA3mh9LAKSyZ22q2CFKyXcoC+pB/59yKhnxGW1NebnrgcMOg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\newSetup\\GardenTracker\\Tracker.csproj",
+  "projectFilePath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\FinalProject\\GardenTracker\\Tracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\7teli\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\7teli\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
