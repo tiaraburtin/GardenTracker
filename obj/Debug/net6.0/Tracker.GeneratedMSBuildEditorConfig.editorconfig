@@ -9,77 +9,77 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Tracker
 build_property.RootNamespace = Tracker
-build_property.ProjectDir = C:\Users\tburt\OneDrive\Desktop\LotusLightCodes\GardenProject\GardenTracker\
+build_property.ProjectDir = C:\Users\Daniel\Desktop\Launchcode\C#\Tracker Garden New\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\tburt\OneDrive\Desktop\LotusLightCodes\GardenProject\GardenTracker
+build_property.MSBuildProjectDirectory = C:\Users\Daniel\Desktop\Launchcode\C#\Tracker Garden New
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Appointments/Form.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Appointments/Form.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEZvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Bed/Add.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Bed/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmVkXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Bed/AddBedToSeed.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Bed/AddBedToSeed.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmVkXEFkZEJlZFRvU2VlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Bed/Detail.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Bed/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmVkXERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Bed/Index.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Bed/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmVkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Home/Index.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Home/Privacy.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Index.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Seed/Add.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Seed/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VlZFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Seed/AddSeedToBed.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Seed/AddSeedToBed.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VlZFxBZGRTZWVkVG9CZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Seed/Detail.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Seed/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VlZFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Seed/Index.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Seed/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VlZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Shared/Error.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/_ViewImports.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/_ViewStart.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tburt/OneDrive/Desktop/LotusLightCodes/GardenProject/GardenTracker/Views/Shared/_Layout.cshtml]
+[C:/Users/Daniel/Desktop/Launchcode/C\#/Tracker Garden New/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5tiuhzvmjk
