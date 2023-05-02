@@ -86,7 +86,7 @@ namespace Tracker.Controllers
             return View(viewModel);
         }
 
-		public IActionResult Delete()
+        public IActionResult Delete()
 		{
 			ViewBag.seeds = context.Seeds.ToList();
 

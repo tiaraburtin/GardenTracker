@@ -4,9 +4,9 @@ using Tracker.Models;
 
 namespace Tracker.ViewModels
 {
-    public class AddSeedViewModel 
+    public class AddSeedViewModel
     {
-		public int SeedId { get; set; }
+        public int SeedId { get; set; }
 
         public string? Name { get; set; }
 
@@ -42,4 +42,3 @@ namespace Tracker.ViewModels
         }
     }
 }
-//When you add a seed you can add multiple garden beds and or hardiness zones to this specific seed
