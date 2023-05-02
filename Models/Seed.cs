@@ -9,7 +9,7 @@
 
         public string HardinessZone { get; set; }
 
-        public ICollection<Bed> Beds { get; set; }    
+        public ICollection<Bed>? Beds { get; set; }    
 
         public Seed(string name, DateTime datePlanted, string hardinessZone)
         {

@@ -9,7 +9,7 @@ namespace Tracker.ViewModels
 		public int SeedId { get; set; }
 		public string? Name { get; set; }
 
-		public Seed Seed { get; set; }
+		public Seed? Seed { get; set; }
 
 		public string BedText { get; set; }
 
