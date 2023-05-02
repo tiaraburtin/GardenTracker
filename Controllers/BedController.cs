@@ -8,7 +8,7 @@ using Tracker.Models;
 using Tracker.ViewModels;
 using Tracker.Data;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 
 namespace Tracker.Controllers
 {
@@ -66,15 +66,18 @@ namespace Tracker.Controllers
                 int bedId = viewModel.BedId;
                 int seedId = viewModel.SeedId;
 
-                //is binding the seedId to the BedId from the viewModel
-                //
-                Seed theSeed = context.Seeds.Where(j => j.Id == seedId).First();
+                //access seeds property in bed table and look for bedId that matches the one selected
+                //access seeds table and selected seed
+                //if seed already has a relationship with bed it won't be found and won't be added
+                Bed theBed = context.Beds.Include(b=>b.Seeds).Where(b => b.Id == bedId).First();
+                Seed theSeed = context.Seeds.Where(s => s.Id == seedId).First();
 
-                Bed theBed = context.Beds.Where(s => s.Id == bedId).First();
 
-                theSeed.Beds.Add(theBed);
+                    theSeed.Beds.Add(theBed);
 
-                context.SaveChanges();
+                    context.SaveChanges();
+                
+              
 
                 return Redirect("/Seed/Detail/" + seedId);
             }
@@ -101,8 +104,6 @@ namespace Tracker.Controllers
 
             return Redirect("/Bed");
         }
-
-
 
         public IActionResult Detail(int id)
         {

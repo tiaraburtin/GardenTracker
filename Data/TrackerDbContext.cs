@@ -22,9 +22,11 @@ namespace Tracker.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Seed>()
-            .HasMany(e => e.Beds)
-            .WithMany(e => e.Seeds);
+            //modelBuilder.Entity<Seed>()
+            //.HasMany(e => e.Beds)
+            //.WithMany(e => e.Seeds);
+            //.UsingEntity(j => j.ToTable("BedSeed"));
+            //base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Bed>()
             .HasMany(f => f.Seeds)
