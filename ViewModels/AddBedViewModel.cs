@@ -1,11 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 using Tracker.Models;
 
 namespace Tracker.ViewModels
 {
     public class AddBedViewModel
     {
-        public int BedId { get; set; }  
+        public int BedId { get; set; }
+        [Required(ErrorMessage = "Name is required")]
+        [StringLength(30, MinimumLength = 3, ErrorMessage = 
+         "Name must be between 2 and 30 characters long")]
         public string? Name { get; set; }
 
         public int SeedId { get; set; }
