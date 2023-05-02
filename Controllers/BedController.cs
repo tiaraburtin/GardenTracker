@@ -44,7 +44,12 @@ namespace Tracker.Controllers
 
                 return Redirect("/Bed/");
             }
-            return View("Add", bed);
+            else
+            {
+                return View("Add", bed);
+
+
+            }
         }
 
 		[HttpGet]

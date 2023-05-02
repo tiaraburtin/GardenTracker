@@ -20,8 +20,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>
 // Add services to the container.
 
 
-var connectionString = "server=localhost;user=newuser;password=tracker;database=Tracker";
-var serverVersion = new MySqlServerVersion(new Version(8, 0, 32));
+var connectionString = "server=localhost;user=tracker;password=tracker;database=tracker";
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 18));
 
 builder.Services.AddDbContext<TrackerDbContext>(dbContextOptions => dbContextOptions.UseMySql(connectionString, serverVersion));
 
