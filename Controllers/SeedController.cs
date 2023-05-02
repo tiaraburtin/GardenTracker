@@ -15,12 +15,12 @@ namespace Tracker.Controllers
     public class SeedController : Controller
     {
         private TrackerDbContext context;
-        private readonly ILogger<SeedController> _logger;
+       
 
         public SeedController(TrackerDbContext dbContext, ILogger<SeedController> logger)
         {
             context = dbContext;
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+       
         }
 
 
@@ -59,8 +59,8 @@ namespace Tracker.Controllers
 
             List<Seed> possibleSeeds = context.Seeds.ToList();
 
-            AddSeedViewModel viewModel = new AddSeedViewModel(theBed, possibleSeeds);
-            return View(viewModel);
+            AddSeedViewModel addSeedViewModel = new AddSeedViewModel(theBed, possibleSeeds);
+            return View(addSeedViewModel);
         }
 
         [HttpPost]
@@ -69,13 +69,14 @@ namespace Tracker.Controllers
             if (ModelState.IsValid)
             {
                 int bedId = viewModel.BedId;
-                int seedId = viewModel.SeedId;
+               int seedId = viewModel.SeedId;
 
                 //is binding the seedId to the BedId from the viewModel
                 //
+                Seed theSeed = context.Seeds.Include(b => b.Beds).Where(s => s.Id == seedId).First();
                 Bed theBed = context.Beds.Where(j => j.Id == bedId).First();
 
-                Seed theSeed = context.Seeds.Where(s => s.Id == seedId).First();
+                
 
                 theBed.Seeds.Add(theSeed);
 
@@ -83,7 +84,7 @@ namespace Tracker.Controllers
 
                 return Redirect("/Bed/Detail/" + bedId);
             }
-            return View(viewModel);
+            return View("AddSeedToBed", viewModel);
         }
 
         public IActionResult Delete()
@@ -110,7 +111,6 @@ namespace Tracker.Controllers
 
 		public IActionResult Detail(int id)
         {
-            _logger.LogInformation($"Detail method called with id = {id}");
 
 			Seed theSeed = context.Seeds
 		   .Include(j => j.Beds)

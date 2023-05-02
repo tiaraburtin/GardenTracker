@@ -105,8 +105,6 @@ namespace Tracker.Controllers
             return Redirect("/Bed");
         }
 
-
-
         public IActionResult Detail(int id)
         {
             Bed theBed = context.Beds
