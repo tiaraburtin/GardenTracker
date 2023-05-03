@@ -1,11 +1,22 @@
 ﻿@model Tracker.Models.Bed
 
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<IdentityUser> UserManager
+
+
 <h1>Add GardenBed</h1>
 
 <form asp-controller="Bed" asp-action="AddBed" method="post">
     <div class="form-group">
         <label asp-for="Name">Name</label>
         <input asp-for="Name" class="form-control" />
+        <span></span>
+    </div>
+
+    <div class="form-group">
+        @*<label asp-for="UserId"></label>*@
+        <input type="hidden" asp-for="UserId" class="form-control" value="@UserManager.GetUserId(User)" />
         <span></span>
     </div>
 

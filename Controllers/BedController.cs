@@ -8,22 +8,27 @@ using Tracker.Models;
 using Tracker.ViewModels;
 using Tracker.Data;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace Tracker.Controllers
 {
+    [Authorize]
     public class BedController : Controller
     {
+        private UserManager<IdentityUser> UserManager;
         private TrackerDbContext context;
 
-        public BedController(TrackerDbContext dbContext)
+        public BedController(TrackerDbContext dbContext, UserManager<IdentityUser> userManager)
         {
+            UserManager = userManager;
             context = dbContext;
         }
         [HttpGet]
         public IActionResult Index()
         {
-            List<Bed> beds = context.Beds.ToList();
+            string id = UserManager.GetUserId(User);
+            List<Bed> beds = context.Beds.Where(b => b.UserId == id).ToList();
             return View(beds);
         }
 
@@ -31,7 +36,7 @@ namespace Tracker.Controllers
         public IActionResult Add()
         {
             Bed bed = new Bed();
-            return View();
+            return View(bed);
         }
 
         [HttpPost]
@@ -39,7 +44,13 @@ namespace Tracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.Beds.Add(bed);
+                //bed.UserId = UserManager.GetUserId(User);
+                Bed newBed = new Bed
+                {
+                    Name = bed.Name,
+                    UserId = bed.UserId
+                };
+                context.Beds.Add(newBed);
                 context.SaveChanges();
 
                 return Redirect("/Bed/");
@@ -47,16 +58,16 @@ namespace Tracker.Controllers
             return View("Add", bed);
         }
 
-		[HttpGet]
-		public IActionResult AddBedToSeed(int id)
-		{
-			Seed theSeed = context.Seeds.Find(id);
+        [HttpGet]
+        public IActionResult AddBedToSeed(int id)
+        {
+            Seed theSeed = context.Seeds.Find(id);
 
-			List<Bed> possibleBeds = context.Beds.ToList();
+            List<Bed> possibleBeds = context.Beds.ToList();
 
-			AddBedViewModel viewModel = new AddBedViewModel(theSeed, possibleBeds);
-			return View(viewModel);
-		}
+            AddBedViewModel viewModel = new AddBedViewModel(theSeed, possibleBeds);
+            return View(viewModel);
+        }
 
         [HttpPost]
         public IActionResult ProcessAddBedToSeed(AddBedViewModel viewModel)
@@ -66,20 +77,23 @@ namespace Tracker.Controllers
                 int bedId = viewModel.BedId;
                 int seedId = viewModel.SeedId;
 
-                //is binding the seedId to the BedId from the viewModel
-                //
-                Seed theSeed = context.Seeds.Where(j => j.Id == seedId).First();
+                //access seeds property in bed table and look for bedId that matches the one selected
+                //access seeds table and selected seed
+                //if seed already has a relationship with bed it won't be found and won't be added
+                Bed theBed = context.Beds.Include(b => b.Seeds).Where(b => b.Id == bedId).First();
+                Seed theSeed = context.Seeds.Where(s => s.Id == seedId).First();
 
-                Bed theBed = context.Beds.Where(s => s.Id == bedId).First();
 
                 theSeed.Beds.Add(theBed);
 
                 context.SaveChanges();
 
+
+
                 return Redirect("/Seed/Detail/" + seedId);
             }
             return View(viewModel);
-            
+
         }
         public IActionResult Delete()
         {
@@ -102,8 +116,6 @@ namespace Tracker.Controllers
             return Redirect("/Bed");
         }
 
-
-
         public IActionResult Detail(int id)
         {
             Bed theBed = context.Beds
@@ -117,5 +129,5 @@ namespace Tracker.Controllers
         }
     }
 }
-      
+    
 

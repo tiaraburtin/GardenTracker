@@ -1,5 +1,9 @@
 ﻿@model Tracker.Models.Seed
 
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<IdentityUser> UserManager
+
 <h1>Add Seed</h1>
 
 <form asp-controller="Seed" asp-action="AddSeed" method="post">
@@ -18,6 +22,12 @@
     <div class="form-group">
         <label asp-for="HardinessZone">Hardiness Zone</label>
         <input asp-for="HardinessZone" class="form-control" />
+        <span></span>
+    </div>
+
+    <div class="form-group">
+        @*<label asp-for="UserId"></label>*@
+        <input type="hidden" asp-for="UserId" class="form-control" value="@UserManager.GetUserId(User)" />
         <span></span>
     </div>
 

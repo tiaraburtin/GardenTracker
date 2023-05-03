@@ -9,25 +9,32 @@ using Tracker.ViewModels;
 using Tracker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace Tracker.Controllers
 {
+    [Authorize]
     public class SeedController : Controller
     {
-        private TrackerDbContext context;
-        private readonly ILogger<SeedController> _logger;
+        private UserManager<IdentityUser> UserManager;
 
-        public SeedController(TrackerDbContext dbContext, ILogger<SeedController> logger)
+        private TrackerDbContext context;
+
+
+        public SeedController(TrackerDbContext dbContext, ILogger<SeedController> logger, UserManager<IdentityUser> userManager)
         {
+            UserManager = userManager;
             context = dbContext;
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
         }
 
 
         public IActionResult Index()
         {
-			List<Seed> seeds = context.Seeds.ToList();
-			//List<Seed> seeds = context.Seeds.ToList();
+            string id = UserManager.GetUserId(User);
+            List<Seed> seeds = context.Seeds.Where(b=> b.UserId == id).ToList();
+            //List<Seed> seeds = context.Seeds.ToList();
             return View(seeds);
         }
 
@@ -43,6 +50,15 @@ namespace Tracker.Controllers
         {
             if (ModelState.IsValid)
             {
+                Seed newSeed = new Seed
+                {
+                    Name = seed.Name,
+                    DatePlanted = seed.DatePlanted,
+                    HardinessZone = seed.HardinessZone,
+                    UserId = seed.UserId,
+                    Id = seed.Id
+
+                };
                 context.Seeds.Add(seed);
                 context.SaveChanges();
 
@@ -59,8 +75,8 @@ namespace Tracker.Controllers
 
             List<Seed> possibleSeeds = context.Seeds.ToList();
 
-            AddSeedViewModel viewModel = new AddSeedViewModel(theBed, possibleSeeds);
-            return View(viewModel);
+            AddSeedViewModel addSeedViewModel = new AddSeedViewModel(theBed, possibleSeeds);
+            return View(addSeedViewModel);
         }
 
         [HttpPost]
@@ -73,9 +89,10 @@ namespace Tracker.Controllers
 
                 //is binding the seedId to the BedId from the viewModel
                 //
+                Seed theSeed = context.Seeds.Include(b => b.Beds).Where(s => s.Id == seedId).First();
                 Bed theBed = context.Beds.Where(j => j.Id == bedId).First();
 
-                Seed theSeed = context.Seeds.Where(s => s.Id == seedId).First();
+
 
                 theBed.Seeds.Add(theSeed);
 
@@ -83,44 +100,43 @@ namespace Tracker.Controllers
 
                 return Redirect("/Bed/Detail/" + bedId);
             }
-            return View(viewModel);
+            return View("AddSeedToBed", viewModel);
         }
 
-		public IActionResult Delete()
-		{
-			ViewBag.seeds = context.Seeds.ToList();
-
-			return View();
-		}
-
-		[HttpPost]
-		public IActionResult DeleteSeed(int[] seedIds)
-		{
-			foreach (int seedId in seedIds)
-			{
-				Seed theSeed = context.Seeds.Find(seedId);
-				context.Seeds.Remove(theSeed);
-			}
-
-			context.SaveChanges();
-
-			return Redirect("/Seed");
-		}
-
-
-		public IActionResult Detail(int id)
+        public IActionResult Delete()
         {
-            _logger.LogInformation($"Detail method called with id = {id}");
+            ViewBag.seeds = context.Seeds.ToList();
 
-			Seed theSeed = context.Seeds
-		   .Include(j => j.Beds)
-		   .FirstOrDefault(j =>j.Id == id);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult DeleteSeed(int[] seedIds)
+        {
+            foreach (int seedId in seedIds)
+            {
+                Seed theSeed = context.Seeds.Find(seedId);
+                context.Seeds.Remove(theSeed);
+            }
+
+            context.SaveChanges();
+
+            return Redirect("/Seed");
+        }
+
+
+        public IActionResult Detail(int id)
+        {
+
+            Seed theSeed = context.Seeds
+           .Include(j => j.Beds)
+           .FirstOrDefault(j => j.Id == id);
 
             SeedDetailViewModel viewModel = new SeedDetailViewModel(theSeed);
 
-			return View(viewModel);
+            return View(viewModel);
 
-		
+
         }
     }
 }
