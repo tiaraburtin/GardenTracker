@@ -9,21 +9,25 @@ using Tracker.ViewModels;
 using Tracker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.CodeAnalysis.VisualBasic.Syntax;
+using Microsoft.AspNetCore.Identity;
 
 namespace Tracker.Controllers
 {
     public class BedController : Controller
     {
+        private UserManager<IdentityUser> UserManager;
         private TrackerDbContext context;
 
-        public BedController(TrackerDbContext dbContext)
+        public BedController(TrackerDbContext dbContext, UserManager<IdentityUser> userManager)
         {
+            UserManager = userManager;
             context = dbContext;
         }
         [HttpGet]
         public IActionResult Index()
         {
-            List<Bed> beds = context.Beds.ToList();
+            string id = UserManager.GetUserId(User);
+            List<Bed> beds = context.Beds.Where(b => b.UserId == id).ToList();
             return View(beds);
         }
 
@@ -41,7 +45,9 @@ namespace Tracker.Controllers
             {
                 Bed newBed = new Bed
                 {
-                    Name = addBedViewModel.Name
+                    Name = addBedViewModel.Name,
+                    UserId = addBedViewModel.UserId
+                    
                 };
 
                 context.Beds.Add(newBed);

@@ -9,24 +9,27 @@ using Tracker.ViewModels;
 using Tracker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Identity;
 
 namespace Tracker.Controllers
 {
     public class SeedController : Controller
     {
         private TrackerDbContext context;
+        private UserManager<IdentityUser> UserManager;
 
-
-        public SeedController(TrackerDbContext dbContext) 
+        public SeedController(TrackerDbContext dbContext, UserManager<IdentityUser> userManager) 
         {
             context = dbContext;
-
+            UserManager = userManager;
         }
 
 
         public IActionResult Index()
         {
-            List<Seed> seeds = context.Seeds.ToList();
+            string id = UserManager.GetUserId(User);
+            List<Seed> seeds = context.Seeds.Where(b => b.UserId == id).ToList();
+
             //List<Seed> seeds = context.Seeds.ToList();
             return View(seeds);
         }
@@ -46,6 +49,9 @@ namespace Tracker.Controllers
                 Seed newSeed = new Seed
                 {
                     Name = addSeedViewModel.Name,
+                    DatePlanted = addSeedViewModel.DatePlanted,
+                    HardinessZone = addSeedViewModel.HardinessZone,
+                    UserId = addSeedViewModel.UserId
                 };
 
                 context.Seeds.Add(newSeed);

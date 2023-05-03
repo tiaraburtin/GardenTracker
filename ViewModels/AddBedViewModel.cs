@@ -15,6 +15,7 @@ namespace Tracker.ViewModels
         public Seed? Seed { get; set; }
        
         public List<SelectListItem>? Beds { get; set; }
+        public string UserId { get; set; }
 
         public AddBedViewModel(Seed theSeed, List<Bed> possibleBeds)
         {
