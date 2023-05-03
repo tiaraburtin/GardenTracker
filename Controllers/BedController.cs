@@ -8,6 +8,7 @@ using Tracker.Models;
 using Tracker.ViewModels;
 using Tracker.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 
 namespace Tracker.Controllers
@@ -35,18 +36,23 @@ namespace Tracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddBed(Bed bed)
+        public IActionResult AddBed(AddBedViewModel addBedViewModel)
         {
             if (ModelState.IsValid)
             {
-                context.Beds.Add(bed);
+                Bed newBed = new Bed
+                {
+                    Name = addBedViewModel.Name,   
+
+                };
+                context.Beds.Add(newBed);
                 context.SaveChanges();
 
                 return Redirect("/Bed/");
             }
             else
             {
-                return View("Add", bed);
+                return View("Add",addBedViewModel);
 
 
             }
