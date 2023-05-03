@@ -17,7 +17,7 @@ namespace Tracker.Controllers
         private TrackerDbContext context;
 
 
-        public SeedController(TrackerDbContext dbContext, ILogger<SeedController> logger)
+        public SeedController(TrackerDbContext dbContext) 
         {
             context = dbContext;
 

@@ -13,14 +13,20 @@ namespace Tracker.ViewModels
 
 		public string BedText { get; set; }
 
+		public string HardinessZone { get; set; }
+
+		public DateTime DatePlanted { get; set;}
+
 		public SeedDetailViewModel(Seed theSeed)
 		{
 			SeedId = theSeed.Id;
 			Name = theSeed.Name;
 			BedText = "";
 			List<Bed> beds = theSeed.Beds.ToList();
+            DatePlanted = theSeed.DatePlanted;
+            HardinessZone = theSeed.HardinessZone;
 
-			for (int i = 0; i < beds.Count; i++)
+            for (int i = 0; i < beds.Count; i++)
 			{
 				BedText += (beds[i].Name);
 				if (i < beds.Count - 1)
@@ -30,9 +36,6 @@ namespace Tracker.ViewModels
 			}
 			Seed = theSeed;
 		}
-		//public SeedDetailViewModel()
-		//{
-		//	Beds = new List<Bed>();
-		//}
+		
 	}
 }
