@@ -15,19 +15,19 @@ namespace Tracker.Controllers
     public class SeedController : Controller
     {
         private TrackerDbContext context;
-       
+
 
         public SeedController(TrackerDbContext dbContext, ILogger<SeedController> logger)
         {
             context = dbContext;
-       
+
         }
 
 
         public IActionResult Index()
         {
-			List<Seed> seeds = context.Seeds.ToList();
-			//List<Seed> seeds = context.Seeds.ToList();
+            List<Seed> seeds = context.Seeds.ToList();
+            //List<Seed> seeds = context.Seeds.ToList();
             return View(seeds);
         }
 
@@ -69,14 +69,14 @@ namespace Tracker.Controllers
             if (ModelState.IsValid)
             {
                 int bedId = viewModel.BedId;
-               int seedId = viewModel.SeedId;
+                int seedId = viewModel.SeedId;
 
                 //is binding the seedId to the BedId from the viewModel
                 //
                 Seed theSeed = context.Seeds.Include(b => b.Beds).Where(s => s.Id == seedId).First();
                 Bed theBed = context.Beds.Where(j => j.Id == bedId).First();
 
-                
+
 
                 theBed.Seeds.Add(theSeed);
 
@@ -87,40 +87,72 @@ namespace Tracker.Controllers
             return View("AddSeedToBed", viewModel);
         }
 
-        public IActionResult Delete()
-		{
-			ViewBag.seeds = context.Seeds.ToList();
+        [HttpPost]
+        public IActionResult gatherSeeds(int[] editIds)
+        {
+            List<Seed> seedsToEdit = new List<Seed>();
+            foreach (int seedId in editIds)
+            {
+                Seed theSeed = context.Seeds.Find(seedId);
+                seedsToEdit.Add(theSeed);
 
-			return View();
-		}
+                context.SaveChanges();
 
-		[HttpPost]
-		public IActionResult DeleteSeed(int[] seedIds)
-		{
-			foreach (int seedId in seedIds)
-			{
-				Seed theSeed = context.Seeds.Find(seedId);
-				context.Seeds.Remove(theSeed);
-			}
+            }
+            return View("EditSeed", seedsToEdit);
+        }
 
-			context.SaveChanges();
-
-			return Redirect("/Seed");
-		}
-
-
-		public IActionResult Detail(int id)
+        [HttpPost]
+        public IActionResult EditSeedSubmit(int[] seedIds, string[] seeds, int[]hardinessZone, DateTime[] dateplanted)
         {
 
-			Seed theSeed = context.Seeds
-		   .Include(j => j.Beds)
-		   .FirstOrDefault(j =>j.Id == id);
+            for (int i = 0; i < seedIds.Length; i++)
+            {
+                Seed seed = context.Seeds.Find(seedIds[i]);
+                seed.Name = seeds[i];
+                seed.HardinessZone = seeds[i];
+                seed.DatePlanted = dateplanted[i];
+                
+            }
+
+            context.SaveChanges();
+
+            return Redirect("Index");
+        }
+        public IActionResult Delete()
+        {
+            ViewBag.seeds = context.Seeds.ToList();
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult DeleteSeed(int[] deleteIds)
+        {
+            foreach (int seedId in deleteIds)
+            {
+                Seed theSeed = context.Seeds.Find(seedId);
+                context.Seeds.Remove(theSeed);
+            }
+
+            context.SaveChanges();
+
+            return Redirect("/Seed");
+        }
+
+
+        public IActionResult Detail(int id)
+        {
+
+            Seed theSeed = context.Seeds
+           .Include(j => j.Beds)
+           .FirstOrDefault(j => j.Id == id);
 
             SeedDetailViewModel viewModel = new SeedDetailViewModel(theSeed);
 
-			return View(viewModel);
+            return View(viewModel);
 
-		
+
         }
     }
 }

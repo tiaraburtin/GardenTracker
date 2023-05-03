@@ -48,10 +48,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/7teli/Desktop/LaunchCode/InProgress/GardenTracker/Views/Appointments/Form.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEZvcm0uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/7teli/Desktop/LaunchCode/InProgress/GardenTracker/Views/Bed/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmVkXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -90,6 +86,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/7teli/Desktop/LaunchCode/InProgress/GardenTracker/Views/Seed/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VlZFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/7teli/Desktop/LaunchCode/InProgress/GardenTracker/Views/Seed/EditSeed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VlZFxFZGl0U2VlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/7teli/Desktop/LaunchCode/InProgress/GardenTracker/Views/Seed/Index.cshtml]

@@ -1,0 +1,27 @@
+﻿@using Tracker.Models
+@model List<Seed>
+
+<h2>Edit Seeds</h2>
+
+@if (Model.Count == 0)
+{
+    <p>No seeds selected for editing</p>
+}
+else
+{
+    <form asp-controller="Seed" asp-action="EditSeedSubmit" method="post">
+        @foreach (var seed in Model)
+        {
+            <div>
+                <h1>Bed: @seed.Name</h1>
+                <label>Name:</label>
+                <input type="text" name="seeds[]" value="@seed.Name" />
+                <input type="text" name="datePlanted[]" value="@seed.DatePlanted" />
+                <input type="text" name="hardinessZone[]" value="@seed.HardinessZone" />
+                <input type="hidden" name="seedIds[]" value="@seed.Id" />
+            </div>
+        }
+        <button type="submit" formaction="@Url.Action("EditSeedSubmit", "Seed")" class="btn btn-primary">Save Changes</button>
+
+    </form>
+}

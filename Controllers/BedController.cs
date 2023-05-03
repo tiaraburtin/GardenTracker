@@ -84,41 +84,37 @@ namespace Tracker.Controllers
             return View(viewModel);
 
         }
-        
-        //this will get the values
-        //[HttpPost]
-        //public IActionResult GatherBedInfo(int[] bedIds)
-        //{
-        //    foreach (int bedId in bedIds)
-        //    {
-        //        Bed theBed = context.Beds.Find(bedId);
-
-
-        //        context.SaveChanges();
-
-        //    }
-        //    return View("EditBed", );
-        
-
-        //[HttpPost]
-        //public IActionResult EditBed(int[] bedIds)
-        //{
-        //    foreach (int bedId in bedIds)
-        //    {
-        //        Bed theBed = context.Beds.Find(bedId);
-
-        //        theBed.Name = name;
-
-
-        //        context.SaveChanges();
-
-        //    }
-        //    return View("Index");
-        //}
-
-
 
         [HttpPost]
+        public IActionResult gatherBeds(int[] editIds)
+        {
+            List<Bed> bedstoedit = new List<Bed>();
+            foreach (int bedid in editIds)
+            {
+                Bed thebed = context.Beds.Find(bedid);
+                bedstoedit.Add(thebed);
+
+                context.SaveChanges();
+
+            }
+            return View("EditBed", bedstoedit);
+        }
+
+        [HttpPost]
+        public IActionResult EditBedSubmit(int[] bedIds, string[] beds)
+        {
+
+            for (int i = 0; i < bedIds.Length; i++)
+            {
+                Bed bed = context.Beds.Find(bedIds[i]);
+                bed.Name = beds[i];
+            }
+
+            context.SaveChanges();
+
+            return Redirect("Index");
+        }
+            [HttpPost]
         public IActionResult DeleteBed(int[] bedIds)
         {
             foreach (int bedId in bedIds)
