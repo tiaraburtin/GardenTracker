@@ -47,16 +47,16 @@ namespace Tracker.Controllers
             return View("Add", bed);
         }
 
-		[HttpGet]
-		public IActionResult AddBedToSeed(int id)
-		{
-			Seed theSeed = context.Seeds.Find(id);
+        [HttpGet]
+        public IActionResult AddBedToSeed(int id)
+        {
+            Seed theSeed = context.Seeds.Find(id);
 
-			List<Bed> possibleBeds = context.Beds.ToList();
+            List<Bed> possibleBeds = context.Beds.ToList();
 
-			AddBedViewModel viewModel = new AddBedViewModel(theSeed, possibleBeds);
-			return View(viewModel);
-		}
+            AddBedViewModel viewModel = new AddBedViewModel(theSeed, possibleBeds);
+            return View(viewModel);
+        }
 
         [HttpPost]
         public IActionResult ProcessAddBedToSeed(AddBedViewModel viewModel)
@@ -69,27 +69,54 @@ namespace Tracker.Controllers
                 //access seeds property in bed table and look for bedId that matches the one selected
                 //access seeds table and selected seed
                 //if seed already has a relationship with bed it won't be found and won't be added
-                Bed theBed = context.Beds.Include(b=>b.Seeds).Where(b => b.Id == bedId).First();
+                Bed theBed = context.Beds.Include(b => b.Seeds).Where(b => b.Id == bedId).First();
                 Seed theSeed = context.Seeds.Where(s => s.Id == seedId).First();
 
 
-                    theSeed.Beds.Add(theBed);
+                theSeed.Beds.Add(theBed);
 
-                    context.SaveChanges();
-                
-              
+                context.SaveChanges();
+
+
 
                 return Redirect("/Seed/Detail/" + seedId);
             }
             return View(viewModel);
-            
-        }
-        public IActionResult Delete()
-        {
-            ViewBag.beds = context.Beds.ToList();
 
-            return View();
         }
+        
+        //this will get the values
+        //[HttpPost]
+        //public IActionResult GatherBedInfo(int[] bedIds)
+        //{
+        //    foreach (int bedId in bedIds)
+        //    {
+        //        Bed theBed = context.Beds.Find(bedId);
+
+
+        //        context.SaveChanges();
+
+        //    }
+        //    return View("EditBed", );
+        
+
+        //[HttpPost]
+        //public IActionResult EditBed(int[] bedIds)
+        //{
+        //    foreach (int bedId in bedIds)
+        //    {
+        //        Bed theBed = context.Beds.Find(bedId);
+
+        //        theBed.Name = name;
+
+
+        //        context.SaveChanges();
+
+        //    }
+        //    return View("Index");
+        //}
+
+
 
         [HttpPost]
         public IActionResult DeleteBed(int[] bedIds)

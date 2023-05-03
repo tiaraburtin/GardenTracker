@@ -15,7 +15,7 @@ else
         <tr>
             <th>Id
             <th>Garden Bed</th>
-            
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         @foreach (var bed in Model)
@@ -24,9 +24,13 @@ else
                 <td>@bed.Id</td>
 
 
-                <td><a asp-controller="Bed" asp-action="Detail" asp-route-id="@bed.Id">@bed.Name</a></td>
+                <td><a asp-controller="Bed" asp-action="Detail" asp-route-id="@bed.Id">@bed.Name</a>
+                </td>
+
+                  <td>
+                    <input type="checkbox" name="BedIds" value="@bed.Id" />
+                </td>  
                 
-           
 
                 <td>
                     <input type="checkbox" name="BedIds" value="@bed.Id" />
@@ -38,5 +42,7 @@ else
     <p><a asp-controller="Bed" asp-action="Add" class="btn btn-danger">Add Garden</a></p>
 
     <button type="submit" formaction="@Url.Action("DeleteBed", "Bed")" class="btn btn-danger">Delete Selected Gardens</button>
+
+    <button type="submit" formaction="@Url.Action("EditBed", "Bed")" class="btn btn-danger">Edit Selected Gardens</button>
 
     </form>
