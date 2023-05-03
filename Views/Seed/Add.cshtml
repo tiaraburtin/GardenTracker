@@ -20,8 +20,14 @@
         <input asp-for="HardinessZone" class="form-control" />
         <span></span>
     </div>
+    @*<div class="form-group">
+        <label asp-for="ZipCode">Zipcode</label>
+        <input asp-for="ZipCode" class="form-control" />
+        <span></span>
+    </div>*@
 
     <br />
 
     <input type="submit" value="Add Seed" class="btn btn-danger" />
+   @* <button type="submit" formaction="@Url.Action("GetZone", "ZoneAPI")" class="btn btn-danger">Get Hardiness zone from api</button>*@
 </form>
