@@ -7,22 +7,27 @@
 
 <form asp-controller="Seed" asp-action="AddSeed" method="post">
     <div class="form-group">
-        <label asp-for="Name">Name</label>
+            <label asp-for="Name">Name</label>
         <input asp-for="Name" class="form-control" />
         <span></span>
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="DatePlanted">Date Planted</label>
         <input asp-for="DatePlanted" class="form-control" />
         <span></span>
+        <span asp-validation-for="DatePlanted" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="HardinessZone">Hardiness Zone</label>
         <input asp-for="HardinessZone" class="form-control" />
         <span></span>
+        <span asp-validation-for="HardinessZone" style="color:red"></span>
     </div>
+
+    <br />
     @*<div class="form-group">
             <label asp-for="ZipCode">Zipcode</label>
             <input asp-for="ZipCode" class="form-control" />
