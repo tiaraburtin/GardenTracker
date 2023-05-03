@@ -10501,26 +10501,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\7teli\\.nuget\\packages\\": {}
+    "/Users/naomirodriguez/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\7teli\\Desktop\\LaunchCode\\InProgress\\GardenTracker\\Tracker.csproj",
+      "projectUniqueName": "/Users/naomirodriguez/Desktop/GardenProject/GardenTracker/Tracker.csproj",
       "projectName": "Tracker",
-      "projectPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\InProgress\\GardenTracker\\Tracker.csproj",
-      "packagesPath": "C:\\Users\\7teli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\InProgress\\GardenTracker\\obj\\",
+      "projectPath": "/Users/naomirodriguez/Desktop/GardenProject/GardenTracker/Tracker.csproj",
+      "packagesPath": "/Users/naomirodriguez/.nuget/packages/",
+      "outputPath": "/Users/naomirodriguez/Desktop/GardenProject/GardenTracker/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\7teli\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/naomirodriguez/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -10595,7 +10593,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }
