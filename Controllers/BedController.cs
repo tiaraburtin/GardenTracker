@@ -61,6 +61,7 @@ namespace Tracker.Controllers
         [HttpGet]
         public IActionResult AddBedToSeed(int id)
         {
+
             Seed theSeed = context.Seeds.Find(id);
 
             List<Bed> possibleBeds = context.Beds.ToList();

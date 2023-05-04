@@ -1,66 +1,49 @@
 ﻿<Properties StartupConfiguration="{6D03547B-F10B-4331-9D19-2856BBE811E0}|WaterReminder">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Tracker PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Seed/AddSeedToBed.cshtml">
     <Files>
-      <File FileName="Controllers/SeedController.cs" Line="55" Column="1" />
-      <File FileName="Models/Seed.cs" Line="10" Column="50" />
-      <File FileName="ViewModels/AddSeedViewModel.cs" Line="17" Column="50" />
-      <File FileName="Views/Seed/Add.cshtml" Line="42" Column="1" />
-      <File FileName="Views/Shared/_Layout.cshtml.css" Line="1" Column="1" />
-      <File FileName="Views/Shared/_Layout.cshtml" Line="41" Column="30" />
-      <File FileName="Areas/Identity/Pages/Account/Login.cshtml.cs" Line="1" Column="1" />
-      <File FileName="Areas/Identity/Pages/Account/Login.cshtml" Line="29" Column="22" />
-      <File FileName="Areas/Identity/Pages/Account/Register.cshtml" Line="33" Column="5" />
-      <File FileName="Areas/Identity/Pages/Account/Register.cshtml.cs" Line="129" Column="34" />
-      <File FileName="Areas/Identity/Pages/Account/RegisterConfirmation.cshtml" Line="12" Column="6" />
-      <File FileName="Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.cs" Line="70" Column="30" />
-      <File FileName="Areas/Identity/Pages/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
-      <File FileName="Areas/Identity/Pages/_ViewImports.cshtml" Line="1" Column="1" />
-      <File FileName="Areas/Identity/Pages/_ViewStart.cshtml" Line="1" Column="1" />
-      <File FileName="ScaffoldingReadMe.txt" Line="1" Column="1" />
-      <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Shared/_LoginPartial.cshtml" Line="1" Column="1" />
+      <File FileName="Controllers/SeedController.cs" Line="31" Column="71" />
+      <File FileName="Models/Seed.cs" />
+      <File FileName="ViewModels/AddSeedViewModel.cs" />
+      <File FileName="Views/Seed/Add.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Shared/_Layout.cshtml.css" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="45" Column="21" />
+      <File FileName="Areas/Identity/Pages/Account/Login.cshtml.cs" />
+      <File FileName="Areas/Identity/Pages/Account/Login.cshtml" />
+      <File FileName="Areas/Identity/Pages/Account/Register.cshtml" />
+      <File FileName="Areas/Identity/Pages/Account/Register.cshtml.cs" />
+      <File FileName="Areas/Identity/Pages/Account/RegisterConfirmation.cshtml" />
+      <File FileName="Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.cs" Line="23" Column="17" />
+      <File FileName="Areas/Identity/Pages/_ValidationScriptsPartial.cshtml" />
+      <File FileName="Areas/Identity/Pages/_ViewImports.cshtml" />
+      <File FileName="Areas/Identity/Pages/_ViewStart.cshtml" />
+      <File FileName="ScaffoldingReadMe.txt" />
+      <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" />
+      <File FileName="Views/Shared/_LoginPartial.cshtml" />
+      <File FileName="Views/Search/Index.cshtml" Line="21" Column="12" />
+      <File FileName="Views/Bed/Add.cshtml" Line="25" Column="8" />
+      <File FileName="Controllers/BedController.cs" Line="46" Column="11" />
+      <File FileName="Views/Bed/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Bed/Detail.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Seed/Detail.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Seed/Index.cshtml" Line="28" Column="112" />
+      <File FileName="Views/Bed/AddBedToSeed.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Seed/AddSeedToBed.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Tracker" expanded="True">
             <Node name="Tracker" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
-              <Node name="Areas" expanded="True">
-                <Node name="Identity" expanded="True">
-                  <Node name="Pages" expanded="True">
-                    <Node name="Account" expanded="True">
-                      <Node name="Login.cshtml" expanded="True" />
-                      <Node name="Logout.cshtml" expanded="True" />
-                      <Node name="Register.cshtml" expanded="True" />
-                      <Node name="RegisterConfirmation.cshtml" expanded="True" />
-                    </Node>
-                  </Node>
-                </Node>
-              </Node>
+              <Node name="Dependencies" expanded="True" />
               <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
-              <Node name="Migrations" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Bed" expanded="True" />
-                <Node name="Home" expanded="True" />
                 <Node name="Seed" expanded="True" />
                 <Node name="Shared" expanded="True">
                   <Node name="_Layout.cshtml" expanded="True" />
                 </Node>
-              </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -68,5 +51,9 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Tracker PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
