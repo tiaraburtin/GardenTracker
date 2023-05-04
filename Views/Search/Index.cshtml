@@ -18,7 +18,7 @@
 
     <br />
 
-    <input Onclick="RazorFunction()" type="submit" value="Search Inventory" class="btn btn-success" />
+    <input  type="submit" value="Search Inventory" class="btn btn-success" />
 </form>
 
 @if (Model != null)
@@ -36,16 +36,5 @@
 
 <p>@ViewBag.MyMessage</p>
 
-@functions{
-    public string GetHello()
-    {
-        if(Model == null) { 
-                                
-            <p>No results</p>
-        }
-    
-            return "hello";
-        
 
-    }
-}
+
