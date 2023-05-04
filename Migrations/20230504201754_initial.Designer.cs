@@ -11,8 +11,8 @@ using Tracker.Data;
 namespace Tracker.Migrations
 {
     [DbContext(typeof(TrackerDbContext))]
-    [Migration("20230503093916_Initial")]
-    partial class Initial
+    [Migration("20230504201754_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -242,6 +242,10 @@ namespace Tracker.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
                     b.ToTable("Beds");
@@ -264,8 +268,9 @@ namespace Tracker.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("ZipCode")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 

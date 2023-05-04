@@ -1,11 +1,14 @@
 ﻿@model Tracker.ViewModels.BedDetailViewModel
 
-<h1>Garden: @Model.Name</h1>
+<h1>Garden Bed Detail</h1>
 
 
 <table class="table">
 
-	<p>Seed: @Model.SeedText</p>
+	<b>Garden Bed Name: </b>
+		<p>@Model.Name</p>
+	</br>
+	<b>Seeds planted in this garden bed:</b> @Model.SeedText
 
 </table>
 
