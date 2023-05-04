@@ -114,14 +114,14 @@ namespace Tracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult EditSeedSubmit(int[] seedIds, string[] seeds, int[]hardinessZone, DateTime[] dateplanted)
+        public IActionResult EditSeedSubmit(int[] seedIds, string[] seeds, string[]hardinessZone, DateTime[] dateplanted)
         {
 
             for (int i = 0; i < seedIds.Length; i++)
             {
                 Seed seed = context.Seeds.Find(seedIds[i]);
                 seed.Name = seeds[i];
-                seed.HardinessZone = seeds[i];
+                seed.HardinessZone = hardinessZone[i];
                 seed.DatePlanted = dateplanted[i];
                 
             }
