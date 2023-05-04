@@ -1,13 +1,21 @@
 ﻿@model Tracker.ViewModels.SeedDetailViewModel
 
-<h1>Seed: @Model.Name</h1>
+<h1>Seed Detail</h1>
 
 
 <table class="table">
 
-	<p>Garden Bed: @Model.BedText</p>
-	<p>Hardiness Zone: @Model.HardinessZone</p>
-	<p>Date Planted: @Model.DatePlanted</p>
+	
+	<b>Seed Name: </b>@Model.Name
+	</br>
+	<b>Hardiness Zone: </b> @Model.HardinessZone
+	</br>
+	<b>Date Planted: </b>
+		@Model.DatePlanted
+	</br>
+	</br>
+	<b>Garden Beds this seed is planted in: </b>
+	@Model.BedText
 
 </table>
 
