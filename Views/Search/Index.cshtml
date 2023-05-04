@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using Tracker.Controllers;
+@using Tracker.Models;
+@model List<Seed>
+
+<h1>Search your seed inventory </h1>
+
+<form asp-controller="Search" asp-action="Index" method="post">
+    <div class="form-group">
+        <label>Search Value </label>
+        <input name="searchTerm" class="form-control" />
+
+    </div>
+
+    <br />
+
+    <input Onclick="RazorFunction()" type="submit" value="Search Inventory" class="btn btn-success" />
+</form>
+
+@if (Model != null)
+{
+    foreach (var seed in Model)
+    {
+        <table>
+            <p><a asp-controller="Seed" asp-action="Detail" asp-route-id="@seed.Id">@seed.Name</a></p>
+            <p></p>
+        </table>
+
+    }
+}
+
+
+<p>@ViewBag.MyMessage</p>
+
+@functions{
+    public string GetHello()
+    {
+        if(Model == null) { 
+                                
+            <p>No results</p>
+        }
+    
+            return "hello";
+        
+
+    }
+}
