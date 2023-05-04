@@ -9,12 +9,13 @@ namespace Tracker.ViewModels
         public int SeedId { get; set; }
         public int BedId { get; set; }
 
-        //public string? Name { get; set; }
+        public string? Name { get; set; }
         public Bed? Bed { get; set; }
 
-        //public DateTime DatePlanted { get; set; }
+        public DateTime DatePlanted { get; set; }
+        public DateTime WaterSchedule { get; set; }
 
-        //public string HardinessZone { get; set; }
+        public string HardinessZone { get; set; }
 
         public List<SelectListItem>? Seeds { get; set; }
 

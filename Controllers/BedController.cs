@@ -111,6 +111,7 @@ namespace Tracker.Controllers
             .Include(j => j.Seeds)
             .Single(j => j.Id == id);
 
+
             //Load THE SEEDS on the view model
 
             BedDetailViewModel viewModel = new BedDetailViewModel(theBed);
