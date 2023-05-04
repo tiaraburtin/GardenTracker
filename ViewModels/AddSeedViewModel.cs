@@ -19,7 +19,7 @@ namespace Tracker.ViewModels
         public List<SelectListItem>? Seeds { get; set; }
 
 
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
 
         public AddSeedViewModel(Bed theBed, List<Seed> possibleSeeds)
         {
