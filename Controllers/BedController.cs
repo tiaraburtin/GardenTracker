@@ -126,9 +126,9 @@ namespace Tracker.Controllers
             return Redirect("Index");
         }
             [HttpPost]
-        public IActionResult DeleteBed(int[] bedIds)
+        public IActionResult DeleteBed(int[] deleteIds)
         {
-            foreach (int bedId in bedIds)
+            foreach (int bedId in deleteIds)
             {
                 Bed theBed = context.Beds.Find(bedId);
                 context.Beds.Remove(theBed);

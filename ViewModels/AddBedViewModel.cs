@@ -19,10 +19,7 @@ namespace Tracker.ViewModels
 
         public AddBedViewModel(Seed theSeed, List<Bed> possibleBeds)
         {
-//<<<<<<< HEAD
 
-//=======
-//>>>>>>> parent of cbdf543 (fixed add beds to seeds)
             Beds = new List<SelectListItem>();
             foreach (var bed in possibleBeds)
             {
