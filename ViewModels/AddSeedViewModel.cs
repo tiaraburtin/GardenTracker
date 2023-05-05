@@ -13,7 +13,7 @@ namespace Tracker.ViewModels
         public Bed? Bed { get; set; }
 
         public DateTime DatePlanted { get; set; }
-        public DateTime WaterSchedule { get; set; }
+        public int WaterSchedule { get; set; }
 
         public string HardinessZone { get; set; }
 
