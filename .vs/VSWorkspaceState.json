@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Models",
+    "\\ViewModels",
+    "\\Views",
+    "\\Views\\Seed"
+  ],
+  "SelectedNode": "\\ViewModels\\SeedDetailViewModel.cs",
+  "PreviewInSolutionExplorer": false
+}

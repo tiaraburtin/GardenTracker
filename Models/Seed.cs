@@ -11,7 +11,7 @@ namespace Tracker.Models
 
         public DateTime? DatePlanted { get; set; }
 
-        public int WaterSchedule { get; set; }
+        public int? WaterSchedule { get; set; }
         public DateTime? NeedsWater { get; set; }
       
 
@@ -24,7 +24,7 @@ namespace Tracker.Models
             HardinessZone = hardinessZone;
             DatePlanted = datePlanted;
             WaterSchedule = waterSchedule;
-            NeedsWater = ConvertWaterToTime(this.WaterSchedule,this.DatePlanted);
+            //NeedsWater = ConvertWaterToTime(this.WaterSchedule,this.DatePlanted);
         
         }
         public Seed()
