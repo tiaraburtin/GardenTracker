@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZOo1Ky36FEjfzn/Z4NogqNsWMsMibWp/Ola0WOSiytQkszAk0MI+R07dyOdaXWED0b9LUQlyAcYDDbYwTpu2BA==",
+  "dgSpecHash": "sO4DQNeDNDGMs6Ip0CQJDhM3A9VMhoRAUVgP6l79PSEtNtNBISa27xlcuGV8IFW5medEPipNCPVBHIyRqUQozQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Daniel\\Desktop\\Launchcode\\C#\\Garden Track App\\Tracker.csproj",
+  "projectFilePath": "C:\\Users\\Daniel\\Desktop\\Launchcode\\C#\\Garden Tracker\\Tracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Daniel\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Daniel\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

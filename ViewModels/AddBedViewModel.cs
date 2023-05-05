@@ -9,7 +9,7 @@ namespace Tracker.ViewModels
         public int BedId { get; set; }
         [Required(ErrorMessage = "Name is required")]
         [StringLength(30, MinimumLength = 3, ErrorMessage = 
-         "Name must be between 2 and 30 characters long")]
+        "Name must be between 2 and 30 characters long")]
         public string? Name { get; set; }
 
         public int SeedId { get; set; }

@@ -1,10 +1,12 @@
 html {
   font-size: 14px;
+ 
 }
+
 
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -14,5 +16,17 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+}
+.khaki {
+    background-color: #d1ca08;
+}
+.image-bg {
+    background-image: url("https://media.cnn.com/api/v1/images/stellar/prod/230405132308-01-gardening-stock.jpg?c=16x9&q=h_720,w_1280,c_fill/f_webp");
+    opacity: 0.5;
+}
+.overlay {
+    position: relative;
+    text-align: center;
+    color: darkseagreen;
 }
