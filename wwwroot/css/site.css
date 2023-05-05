@@ -22,11 +22,14 @@ body {
     background-color: #d1ca08;
 }
 .image-bg {
-    background-image: url("https://media.cnn.com/api/v1/images/stellar/prod/230405132308-01-gardening-stock.jpg?c=16x9&q=h_720,w_1280,c_fill/f_webp");
-    opacity: 0.5;
+    background-image: url("https://www.economical.com/ECOCOM/media/EcoComMedia/Site%20imagery/Blog/Blog%20entries/Home-GardenTips-Blog_945x525.jpg?ext=.jpg");
+    opacity: 0.8;
 }
-.overlay {
-    position: relative;
+.centered {
+    position: absolute;
     text-align: center;
-    color: darkseagreen;
+    color: navajowhite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
