@@ -23,7 +23,7 @@ body {
 }
 .image-bg {
     background-image: url("https://www.economical.com/ECOCOM/media/EcoComMedia/Site%20imagery/Blog/Blog%20entries/Home-GardenTips-Blog_945x525.jpg?ext=.jpg");
-    opacity: 0.8;
+    opacity: 0.7;
 }
 .centered {
     position: absolute;
@@ -32,5 +32,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-weight:bolder;
+    opacity:0.5;
     
 }
