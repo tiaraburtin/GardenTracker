@@ -21,7 +21,7 @@ namespace Tracker.Controllers
 
                 if (theSeed.NeedsWater.Equals(DateTime.Now))
                 {
-
+                    //DO THIS IN THE DOM IN JAVASCRIPT
                 };
             }
 

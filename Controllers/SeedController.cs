@@ -64,7 +64,7 @@ namespace Tracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult ProcessAddSeedToBed(AddSeedViewModel viewModel)
+        public IActionResult AddSeedToBed(AddSeedViewModel viewModel)
         {
             if (ModelState.IsValid)
             {

@@ -31,6 +31,7 @@ namespace Tracker.Data
             modelBuilder.Entity<Bed>()
             .HasMany(f => f.Seeds)
             .WithMany(f => f.Beds)
+            
             .UsingEntity(j => j.ToTable("BedSeed"));
             base.OnModelCreating(modelBuilder);
         }
