@@ -61,14 +61,14 @@ namespace Tracker.Controllers
         [HttpGet]
         public IActionResult AddBedToSeed(int id)
         {
-<<<<<<< HEAD
+
              Seed theSeed = context.Seeds.Find(id);
-=======
+
             string userid = UserManager.GetUserId(User);
             
 
-            Seed theSeed = context.Seeds.Find(id);
->>>>>>> AR_AuthenticationUpdate
+            
+
 
             List<Bed> possibleBeds = context.Beds.Where(b => b.UserId == userid).ToList();
 
