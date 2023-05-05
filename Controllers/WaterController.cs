@@ -1,46 +1,31 @@
-﻿//using Microsoft.AspNetCore.Mvc;
-//using Microsoft.EntityFrameworkCore.Infrastructure;
-//using Tracker.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Operations;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Tracker.Models;
+using Microsoft.Software.Form;
 
-//namespace Tracker.Controllers
-//{
-//    public class WaterController : Controller
-//    {
-//        public IActionResult Index()
-//        {
-           
 
-//            foreach (Seed seed in List<Seeds>)
-//                {
-//                foreach (DateTime DatePlanted in seed)
+namespace Tracker.Controllers
+{
+    public class WaterController : Controller
+    {
 
-//                    if (Seed.WaterSchedule == 1;
-//                {
-//                    Timer = DatePlanted.AddDays(7);
-//                    if (Timer = DateTime.Now)
-//                    {
-//                        //call MessageBox class function + seed.Name
-//                    }
 
-//                }
-//                if (Seed.WaterSchedule == 2)
-//                {
-//                    Timer = DatePlanted.AddDays(14)
-//                        if (Timer = DateTime.Now)
-//                    {
-//                        //call MessageBox class function + seed.Name
-//                    }
-//                }
-                    
-//                    }
+        public IActionResult Index()
+        {
+            List<Seed> seed = new List<Seed>;
+            for (int i = 0; i < seed.Count; i++)
+            {
+                Seed theSeed = seed[i];
 
-//                }
+                if (theSeed.NeedsWater.Equals(DateTime.Now))
+                    (
+                    MessageBox.Show("Water Reminder" + "Time To Water Your" seed[i].Name)
+                   );
+            }
 
-//                 }
+            return View("AddSeedToBed");
+        }
+    }
+}
 
-        
-
-//            return View();
-//        }
-//    }
-//}
