@@ -12,8 +12,9 @@ namespace Tracker.ViewModels
         public string? Name { get; set; }
         public Bed? Bed { get; set; }
 
-        public DateTime DatePlanted { get; set; }
-        public int WaterSchedule { get; set; }
+        public DateTime? DatePlanted { get; set; }
+        public int? WaterSchedule { get; set; }
+        public DateTime? NeedsWater { get; set; }
 
         public string HardinessZone { get; set; }
 

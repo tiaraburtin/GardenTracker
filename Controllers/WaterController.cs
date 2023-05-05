@@ -19,10 +19,10 @@ namespace Tracker.Controllers
             {
                 Seed theSeed = seed[i];
 
-                //if (theSeed.NeedsWater.Equals(DateTime.Now))
-                //    (
-                //    //MessageBox.Show("Water Reminder" + "Time To Water Your" seed[i].Name)
-                //   );
+                if (theSeed.NeedsWater.Equals(DateTime.Now))
+                {
+
+                };
             }
 
             return View("AddSeedToBed");

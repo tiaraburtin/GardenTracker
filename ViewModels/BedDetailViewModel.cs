@@ -25,7 +25,7 @@ namespace Tracker.ViewModels
 
             for (int i = 0; i < seeds.Count; i++)
             {
-                SeedText += (seeds[i].Name);
+                SeedText += (seeds[i].Name + seeds[i].DatePlanted + seeds[i].WaterSchedule + seeds[i].NeedsWater);
                 if (i < seeds.Count - 1)
                 {
                     SeedText += ", ";
