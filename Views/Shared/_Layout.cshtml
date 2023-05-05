@@ -25,7 +25,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         @if (UserManager.GetUserId(User) != null)
-                            {
+                        {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Seed" asp-action="Add">Add Seeds</a>
                             </li>
@@ -38,8 +38,11 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Bed" asp-action="Index">All Garden Beds</a>
                             </li>
-                            }
-                        </ul>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Search" asp-action="Index">Search Seed Inventory</a>
+                            </li>
+                        }
+                    </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>

@@ -61,9 +61,16 @@ namespace Tracker.Controllers
         [HttpGet]
         public IActionResult AddBedToSeed(int id)
         {
+<<<<<<< HEAD
              Seed theSeed = context.Seeds.Find(id);
+=======
+            string userid = UserManager.GetUserId(User);
+            
 
-            List<Bed> possibleBeds = context.Beds.ToList();
+            Seed theSeed = context.Seeds.Find(id);
+>>>>>>> AR_AuthenticationUpdate
+
+            List<Bed> possibleBeds = context.Beds.Where(b => b.UserId == userid).ToList();
 
             AddBedViewModel viewModel = new AddBedViewModel(theSeed, possibleBeds);
             return View(viewModel);

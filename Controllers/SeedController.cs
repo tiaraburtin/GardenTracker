@@ -67,8 +67,8 @@ namespace Tracker.Controllers
         public IActionResult AddSeedToBed(int id)
         {
             Bed theBed = context.Beds.Find(id);
-
-            List<Seed> possibleSeeds = context.Seeds.ToList();
+            string userid = UserManager.GetUserId(User);
+            List<Seed> possibleSeeds = context.Seeds.Where(b => b.UserId == userid).ToList();
 
             AddSeedViewModel addSeedViewModel = new AddSeedViewModel(theBed, possibleSeeds);
             return View(addSeedViewModel);
