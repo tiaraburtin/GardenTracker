@@ -1,9 +1,9 @@
 ﻿@model Tracker.ViewModels.AddSeedViewModel
 
-<h1>Add Seed to @Model.Bed.Name Garden Bed: </h1>
+<h1>Add Seed to @Model.Name Garden Bed: </h1>
 
 <form asp-controller="Seed" asp-action="ProcessAddSeedToBed" method="post">
-    <input type="hidden" value="@Model.Bed.Id" name="BedId" />
+    <input type="hidden" value="@Model.BedId" name="BedId" />
 
     <div class="form-group">
         <label asp-for="SeedId">Seed</label>
@@ -20,7 +20,7 @@
   
     <div class="form-group">
         <label asp-for="WaterSchedule">Watering Schedule</label>
-        <select asp-for="WaterSchedule" asp-items="Model.Seeds">
+        <select asp-for="WaterSchedule">
             <option value="0">Please Select One</option>
             <option value="1">Once a week</option>
             <option value="2">Twice a week</option>

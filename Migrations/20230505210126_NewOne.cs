@@ -92,8 +92,9 @@ namespace Tracker.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     HardinessZone = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    DatePlanted = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    WaterSchedule = table.Column<int>(type: "int", nullable: false)
+                    DatePlanted = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    WaterSchedule = table.Column<int>(type: "int", nullable: true),
+                    NeedsWater = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {

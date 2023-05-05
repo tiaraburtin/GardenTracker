@@ -15,8 +15,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>
     options.Password.RequireLowercase = false;
 }).AddEntityFrameworkStores<TrackerDbContext>();
 // Add services to the container.
-var connectionString = "server=localhost;user=tracker;password=tracker;database=tracker";
-var serverVersion = new MySqlServerVersion(new Version(8, 0, 18));
+var connectionString = "server=localhost;user=newuser;password=tracker;database=tracker";
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 32));
 builder.Services.AddDbContext<TrackerDbContext>(dbContextOptions => dbContextOptions.UseMySql(connectionString, serverVersion));
 var app = builder.Build();
 // Configure the HTTP request pipeline.
