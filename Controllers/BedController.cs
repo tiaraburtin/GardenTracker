@@ -61,10 +61,12 @@ namespace Tracker.Controllers
         [HttpGet]
         public IActionResult AddBedToSeed(int id)
         {
+            string userid = UserManager.GetUserId(User);
+            
 
             Seed theSeed = context.Seeds.Find(id);
 
-            List<Bed> possibleBeds = context.Beds.ToList();
+            List<Bed> possibleBeds = context.Beds.Where(b => b.UserId == userid).ToList();
 
             AddBedViewModel viewModel = new AddBedViewModel(theSeed, possibleBeds);
             return View(viewModel);

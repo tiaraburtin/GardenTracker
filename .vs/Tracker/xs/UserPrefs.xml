@@ -1,43 +1,51 @@
 ﻿<Properties StartupConfiguration="{6D03547B-F10B-4331-9D19-2856BBE811E0}|WaterReminder">
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Seed/AddSeedToBed.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/BedController.cs">
     <Files>
-      <File FileName="Controllers/SeedController.cs" Line="31" Column="71" />
+      <File FileName="Controllers/SeedController.cs" Line="71" Column="94" />
       <File FileName="Models/Seed.cs" />
-      <File FileName="ViewModels/AddSeedViewModel.cs" />
-      <File FileName="Views/Seed/Add.cshtml" Line="1" Column="1" />
+      <File FileName="ViewModels/AddSeedViewModel.cs" Line="22" Column="23" />
+      <File FileName="Views/Seed/Add.cshtml" />
       <File FileName="Views/Shared/_Layout.cshtml.css" />
-      <File FileName="Views/Shared/_Layout.cshtml" Line="45" Column="21" />
+      <File FileName="Views/Shared/_Layout.cshtml" />
       <File FileName="Areas/Identity/Pages/Account/Login.cshtml.cs" />
       <File FileName="Areas/Identity/Pages/Account/Login.cshtml" />
       <File FileName="Areas/Identity/Pages/Account/Register.cshtml" />
       <File FileName="Areas/Identity/Pages/Account/Register.cshtml.cs" />
       <File FileName="Areas/Identity/Pages/Account/RegisterConfirmation.cshtml" />
-      <File FileName="Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.cs" Line="23" Column="17" />
+      <File FileName="Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.cs" />
       <File FileName="Areas/Identity/Pages/_ValidationScriptsPartial.cshtml" />
       <File FileName="Areas/Identity/Pages/_ViewImports.cshtml" />
       <File FileName="Areas/Identity/Pages/_ViewStart.cshtml" />
       <File FileName="ScaffoldingReadMe.txt" />
       <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" />
       <File FileName="Views/Shared/_LoginPartial.cshtml" />
-      <File FileName="Views/Search/Index.cshtml" Line="21" Column="12" />
-      <File FileName="Views/Bed/Add.cshtml" Line="25" Column="8" />
-      <File FileName="Controllers/BedController.cs" Line="46" Column="11" />
-      <File FileName="Views/Bed/Index.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Bed/Detail.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Seed/Detail.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Seed/Index.cshtml" Line="28" Column="112" />
-      <File FileName="Views/Bed/AddBedToSeed.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Seed/AddSeedToBed.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Bed/Add.cshtml" />
+      <File FileName="Controllers/BedController.cs" Line="65" Column="13" />
+      <File FileName="Views/Bed/Index.cshtml" />
+      <File FileName="Views/Bed/Detail.cshtml" />
+      <File FileName="Views/Seed/Detail.cshtml" />
+      <File FileName="Views/Seed/Index.cshtml" />
+      <File FileName="Views/Bed/AddBedToSeed.cshtml" />
+      <File FileName="Views/Seed/AddSeedToBed.cshtml" />
+      <File FileName="ViewModels/AddBedViewModel.cs" Line="18" Column="23" />
+      <File FileName="Models/Bed.cs" />
+      <File FileName="ViewModels/BedDetailViewModel.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Tracker" expanded="True">
             <Node name="Tracker" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True" />
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True">
+                <Node name="BedController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Bed" expanded="True" />
                 <Node name="Seed" expanded="True" />
