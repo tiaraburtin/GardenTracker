@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "QhpxXlG6mgke4EgRF4rgxxSvsn18whnle0ASs9B8gu71G9yOMTrRlbh7kZkkhZwbYnLInpWdn5trUSZqc86Aqw==",
   "success": true,
   "projectFilePath": "/Users/naomirodriguez/Desktop/GardenProject/GardenTracker/Tracker.csproj",
-=======
-  "dgSpecHash": "P8ChqQpxVKXIpC3xGtM50evDMQGIyuu+IIaMSs/P59nEigMCUktJ2wW6NUog3P1mgULBbZ6VgnBFHVfdl7o9jA==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\Tracker.csproj",
->>>>>>> 1d828292508a3f7dd5ce95d298fca1b3f5572886
   "expectedPackageFiles": [
     "/Users/naomirodriguez/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/naomirodriguez/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",

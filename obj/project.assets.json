@@ -10506,19 +10506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "/Users/naomirodriguez/Desktop/GardenProject/GardenTracker/Tracker.csproj",
       "projectName": "Tracker",
       "projectPath": "/Users/naomirodriguez/Desktop/GardenProject/GardenTracker/Tracker.csproj",
       "packagesPath": "/Users/naomirodriguez/.nuget/packages/",
       "outputPath": "/Users/naomirodriguez/Desktop/GardenProject/GardenTracker/obj/",
-=======
-      "projectUniqueName": "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\Tracker.csproj",
-      "projectName": "Tracker",
-      "projectPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\Tracker.csproj",
-      "packagesPath": "C:\\Users\\7teli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\obj\\",
->>>>>>> 1d828292508a3f7dd5ce95d298fca1b3f5572886
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/naomirodriguez/.nuget/NuGet/NuGet.Config"
