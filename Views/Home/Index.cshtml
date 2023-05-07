@@ -1,9 +1,24 @@
-﻿@{
+﻿﻿@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4"> Begin Your Gardening Journey</h1>
-    <p class="bg-success text-black"> We have all the tips on
-        how to tend to your garden beds at your finger tips.</p>
+
+    <center>
+        <img src="https://media.cnn.com/api/v1/images/stellar/prod/230405132308-01-gardening-stock.jpg?c=16x9&q=h_720,w_1280,c_fill/f_webp">
+    </center>
+    <div class="centered">
+        <h3>
+            <em>
+                "Garden tracker helps you maintain a flexible watering schedule for your garden beds.
+                It lets your enter all your seeds and set up a friendly schedule that keeps you reminded so you
+                never forget to tend to you garden."
+            </em>
+        </h3>
+    </div>
+    @*  <center> <p class="btn btn-secondary"> Let's get started!</p></center>*@
+    <br />
+    <p>
+        <a class="nav-link text-white btn btn-dark" asp-area="" asp-controller="Seed" asp-action="Add">Let's get started!</a>
+    </p>
 </div>
