@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/naomirodriguez/Desktop/GardenProject/GardenTracker/Tracker.csproj": {}
+    "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\Tracker.csproj": {}
   },
   "projects": {
-    "/Users/naomirodriguez/Desktop/GardenProject/GardenTracker/Tracker.csproj": {
+    "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\Tracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/naomirodriguez/Desktop/GardenProject/GardenTracker/Tracker.csproj",
+        "projectUniqueName": "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\Tracker.csproj",
         "projectName": "Tracker",
-        "projectPath": "/Users/naomirodriguez/Desktop/GardenProject/GardenTracker/Tracker.csproj",
-        "packagesPath": "/Users/naomirodriguez/.nuget/packages/",
-        "outputPath": "/Users/naomirodriguez/Desktop/GardenProject/GardenTracker/obj/",
+        "projectPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\Tracker.csproj",
+        "packagesPath": "C:\\Users\\7teli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/naomirodriguez/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\7teli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -94,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

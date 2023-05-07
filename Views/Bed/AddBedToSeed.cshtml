@@ -8,14 +8,13 @@
     <div class="form-group">
         <label asp-for="BedId">Bed</label>
 
-
         @*use conditional in the creation of drop down list*@
         <select asp-for="BedId" asp-items="Model.Beds"></select>
-        
-
 
         <span asp-validation-for="BedId"></span>
     </div>
 
     <input type="submit" value="Add Bed to Seed" class="btn btn-danger" />
 </form>
+
+

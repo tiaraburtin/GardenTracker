@@ -8,9 +8,11 @@
         public DateTime DatePlanted { get; set; }
 
         public string HardinessZone { get; set; }
+        //public int ZipCode { get; set; }
 
-        public ICollection<Bed> Beds { get; set; }    
+        public ICollection<Bed>? Beds { get; set; }
 
+        public string UserId { get; set; }
         public Seed(string name, DateTime datePlanted, string hardinessZone)
         {
             Name = name;
