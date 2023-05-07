@@ -4,7 +4,7 @@
 
 namespace Tracker.Migrations
 {
-    public partial class DatabaseMigration : Migration
+    public partial class UpdateMigrationT : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

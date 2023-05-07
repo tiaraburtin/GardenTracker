@@ -1,0 +1,25 @@
+﻿@using Tracker.Models
+@model List<Bed>
+
+<h2>Edit Beds</h2>
+
+@if (Model.Count == 0)
+{
+    <p>No beds selected for editing</p>
+}
+else
+{
+    <form asp-controller="Bed" asp-action="EditBedSubmit" method="post">
+        @foreach (var bed in Model)
+        {
+            <div>
+                <h1>Bed: @bed.Name</h1>
+                <label>Name:</label>
+                <input type="text" name="beds[]" value="@bed.Name" />
+                <input type="hidden" name="bedIds[]" value="@bed.Id" />
+            </div>
+        }
+        <button type="submit" formaction="@Url.Action("EditBedSubmit", "Bed")" class="btn btn-primary">Save Changes</button>
+
+    </form>
+}

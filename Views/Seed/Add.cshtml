@@ -1,27 +1,46 @@
 ﻿@model Tracker.Models.Seed
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<IdentityUser> UserManager
 
 <h1>Add Seed</h1>
 
 <form asp-controller="Seed" asp-action="AddSeed" method="post">
     <div class="form-group">
-        <label asp-for="Name">Name</label>
+            <label asp-for="Name">Name</label>
         <input asp-for="Name" class="form-control" />
         <span></span>
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="DatePlanted">Date Planted</label>
         <input asp-for="DatePlanted" class="form-control" />
         <span></span>
+        <span asp-validation-for="DatePlanted" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="HardinessZone">Hardiness Zone</label>
         <input asp-for="HardinessZone" class="form-control" />
         <span></span>
+        <span asp-validation-for="HardinessZone" style="color:red"></span>
     </div>
 
     <br />
+    @*<div class="form-group">
+            <label asp-for="ZipCode">Zipcode</label>
+            <input asp-for="ZipCode" class="form-control" />
+            <span></span>
+        </div>*@
+
+    <div class="form-group">
+        @*<label asp-for="UserId"></label>*@
+        <input type="hidden" asp-for="UserId" class="form-control" value="@UserManager.GetUserId(User)" />
+        <span></span>
+    </div>
+    <br />
 
     <input type="submit" value="Add Seed" class="btn btn-danger" />
+    @* <button type="submit" formaction="@Url.Action("GetZone", "ZoneAPI")" class="btn btn-danger">Get Hardiness zone from api</button>*@
 </form>
