@@ -10501,27 +10501,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\7teli\\.nuget\\packages\\": {}
+    "C:\\Users\\tburt\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\7teli\\Desktop\\LaunchCode\\InProgress\\GardenTracker\\Tracker.csproj",
+      "projectUniqueName": "C:\\Users\\tburt\\OneDrive\\Desktop\\HARMONYPROJECT\\GardenTracker\\Tracker.csproj",
       "projectName": "Tracker",
-      "projectPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\InProgress\\GardenTracker\\Tracker.csproj",
-      "packagesPath": "C:\\Users\\7teli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\InProgress\\GardenTracker\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\Tracker.csproj",
-      "projectName": "Tracker",
-      "projectPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\Tracker.csproj",
-      "packagesPath": "C:\\Users\\7teli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\obj\\",
->>>>>>> 972fd100dd49d44004f007dc3c2ae9d7e0137ace
+      "projectPath": "C:\\Users\\tburt\\OneDrive\\Desktop\\HARMONYPROJECT\\GardenTracker\\Tracker.csproj",
+      "packagesPath": "C:\\Users\\tburt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tburt\\OneDrive\\Desktop\\HARMONYPROJECT\\GardenTracker\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\7teli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tburt\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10606,5 +10598,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\tburt\\OneDrive\\Desktop\\HARMONYPROJECT\\GardenTracker\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
