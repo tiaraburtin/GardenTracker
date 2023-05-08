@@ -1,18 +1,19 @@
 ﻿@model Tracker.ViewModels.AddSeedViewModel
 
 <h1>Add Seed to @Model.Bed.Name Garden Bed: </h1>
+<body style="background-color: #87A96B">
+    <form asp-controller="Seed" asp-action="ProcessAddSeedToBed" method="post">
+        <input type="hidden" value="@Model.Bed.Id" name="BedId" />
 
-<form asp-controller="Seed" asp-action="ProcessAddSeedToBed" method="post">
-    <input type="hidden" value="@Model.Bed.Id" name="BedId" />
+        <div class="form-group">
+            <label asp-for="SeedId">Seed</label>
 
-    <div class="form-group">
-        <label asp-for="SeedId">Seed</label>
+            <select asp-for="SeedId" asp-items="Model.Seeds"></select>
 
-        <select asp-for="SeedId" asp-items="Model.Seeds"></select>
+            <span asp-validation-for="SeedId"></span>
+        </div>
 
-        <span asp-validation-for="SeedId"></span>
-    </div>
+        <input type="submit" value="Add Seed to Bed" class="btn btn-light" />
+    </form>
 
-    <input type="submit" value="Add Seed to Bed" class="btn btn-danger" />
-</form>
-
+    </body>

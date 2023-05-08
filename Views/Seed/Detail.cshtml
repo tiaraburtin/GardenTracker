@@ -2,21 +2,23 @@
 
 <h1>Seed Detail</h1>
 
+<body style="background-color: #87A96B">
+    <table class="table">
 
-<table class="table">
 
-	
-	<b>Seed Name: </b>@Model.Name
-	</br>
-	<b>Hardiness Zone: </b> @Model.HardinessZone
-	</br>
-	<b>Date Planted: </b>
-		@Model.DatePlanted
-	</br>
-	</br>
-	<b>Garden Beds this seed is planted in: </b>
-	@Model.BedText
+        <b>Seed Name: </b>
+        @Model.Name
+        </br>
+        <b>Hardiness Zone: </b> @Model.HardinessZone
+        </br>
+        <b>Date Planted: </b>
+        @Model.DatePlanted
+        </br>
+        </br>
+        <b>Garden Beds this seed is planted in: </b>
+        @Model.BedText
 
-</table>
+    </table>
 
-<a asp-controller="Bed" asp-action="AddBedToSeed" asp-route-id="@Model.SeedId" class="btn btn-danger">Add garden beds to this seed</a>
+    <a asp-controller="Bed" asp-action="AddBedToSeed" asp-route-id="@Model.SeedId" class="btn btn-light">Add garden beds to this seed</a>
+    </body>

@@ -4,14 +4,15 @@
 
 <h1>Garden Bed Detail</h1>
 
+<body style="background-color: #87A96B">
+    <table class="table">
 
-<table class="table">
+        <b>Garden Bed Name: </b>
+        <p>@Model.Name</p>
+        </br>
+        <b>Seeds planted in this garden bed:</b> @Model.SeedText
 
-	<b>Garden Bed Name: </b>
-		<p>@Model.Name</p>
-	</br>
-	<b>Seeds planted in this garden bed:</b> @Model.SeedText
+    </table>
 
-</table>
-
-<a asp-controller="Seed" asp-action="AddSeedToBed" asp-route-id="@Model.BedId" class="btn btn-danger">Add seeds to this garden bed</a>
+    <a asp-controller="Seed" asp-action="AddSeedToBed" asp-route-id="@Model.BedId" class="btn btn-light">Add seeds to this garden bed</a>
+    </body>

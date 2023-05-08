@@ -6,35 +6,35 @@
 @using Tracker.Controllers;
 @using Tracker.Models;
 @model List<Seed>
+    <body style="background-color: #87A96B">
+        <h1>Search your seed inventory </h1>
 
-<h1>Search your seed inventory </h1>
+        <form asp-controller="Search" asp-action="Index" method="post">
+            <div class="form-group">
+                <label>Search Value </label>
+                <input name="searchTerm" class="form-control" />
 
-<form asp-controller="Search" asp-action="Index" method="post">
-    <div class="form-group">
-        <label>Search Value </label>
-        <input name="searchTerm" class="form-control" />
+            </div>
 
-    </div>
+            <br />
 
-    <br />
+            <input type="submit" value="Search Inventory" class="btn btn-light" />
+        </form>
 
-    <input  type="submit" value="Search Inventory" class="btn btn-success" />
-</form>
+        @if (Model != null)
+        {
+            foreach (var seed in Model)
+            {
+                <table>
+                    <p><a asp-controller="Seed" asp-action="Detail" asp-route-id="@seed.Id">@seed.Name</a></p>
+                    <p></p>
+                </table>
 
-@if (Model != null)
-{
-    foreach (var seed in Model)
-    {
-        <table>
-            <p><a asp-controller="Seed" asp-action="Detail" asp-route-id="@seed.Id">@seed.Name</a></p>
-            <p></p>
-        </table>
-
-    }
-}
-
-
-<p>@ViewBag.MyMessage</p>
+            }
+        }
 
 
+        <p>@ViewBag.MyMessage</p>
+
+        </body>
 
