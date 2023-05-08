@@ -1,4 +1,5 @@
-﻿using System.Security.Policy;
+﻿using System.Diagnostics.Metrics;
+using System.Security.Policy;
 
 namespace Tracker.Models
 {
@@ -14,6 +15,8 @@ namespace Tracker.Models
         public ICollection<Seed>? Seeds { get; set; }
 
         public ICollection<Bed>? Beds { get; set; }
+        public List<string>? seedname { get; set; }
+        public List<string>? bedname { get; set; }
 
         public Water(DateTime datePlanted, DateTime needsWater)
         {
@@ -56,7 +59,27 @@ namespace Tracker.Models
             }
             return (NeedsWater);
         }
+        public List<string> SeedName()
+        {
 
+            foreach (Seed seed in Seeds)
+            {
+                seedname.Add(seed.Name);
+  
+            }
+            return (seedname);
+        }
+
+        public List<string> BedName()
+        {
+
+            foreach (Bed bed in Beds)
+            {
+                bedname.Add(bed.Name);
+
+            }
+            return (bedname);
+        }
     }
 }
 

@@ -20,10 +20,10 @@ namespace Tracker.ViewModels
         //maybe we dont need this
         public BedDetailViewModel(Water theWater)
         {
-            BedId =
-            Name = Bed.Name;
+            WaterId = Water.Id;
+           
             //how do i add the individual seed with water details?
-            List < Water > theWater = theWater.Seeds.ToList();
+            List < Water > theWater = theWater.ToList();
 
 
             //BedId = theWater.Id;
