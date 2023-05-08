@@ -1,0 +1,26 @@
+﻿@model Tracker.ViewModels.AddWaterSeedToBedViewModel
+
+<h1>Add Seed to @Model.Bed.Name Garden Bed: </h1>
+
+<form asp-controller="Seed" asp-action="AddSeedToBed" method="post">
+
+    <input type="hidden" value="@Model.BedId" name="BedId" />
+
+    <div class="form-group">
+        <label asp-for="SeedId">Seed</label>
+         <select asp-for="SeedId" asp-items="Model.Seed"></select>
+         <span asp-validation-for="SeedId"></span>
+    </div>
+ 
+    <div class="form-group">
+        <label asp-for="Water.DatePlanted">Date Planted</label>
+        <input asp-for="Water.DatePlanted" class="form-control" />
+        <span></span>
+    </div>
+
+ 
+ 
+
+    <input type="submit" value="Add Seed to Bed" class="btn btn-danger" />
+</form>
+

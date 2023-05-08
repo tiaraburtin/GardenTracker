@@ -14,6 +14,7 @@ namespace Tracker.Data
     {
         public DbSet<Seed>? Seeds { get; set; }
         public DbSet<Bed>?  Beds { get; set; }
+        public DbSet<Water>? Waters { get; set; }
 
         public TrackerDbContext(DbContextOptions<TrackerDbContext> options)
             : base(options)
@@ -28,11 +29,11 @@ namespace Tracker.Data
             //.UsingEntity(j => j.ToTable("BedSeed"));
             //base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Bed>()
+            modelBuilder.Entity<Water>()
             .HasMany(f => f.Seeds)
-            .WithMany(f => f.Beds)
-            
-            .UsingEntity(j => j.ToTable("BedSeed"));
+            .WithMany(f => f.Waters)
+
+            .UsingEntity(j => j.ToTable("WaterSeed"));
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -6,18 +6,19 @@ namespace Tracker.Models
     {
         public int Id { get; set; }
         public string Name { get; set; } 
+        public ICollection<Water>? Waters { get; set; }
 
-        public ICollection<Seed>? Seeds { get; set; }
 
 
-    public Bed(string name)
+        public Bed(string name)
         {
             Name = name;
-            Seeds = new List<Seed>();
+            Waters = new List<Water>();
+
         }
          public Bed() 
         {
-            Seeds = new List<Seed>();
+   
         }    
        
     }

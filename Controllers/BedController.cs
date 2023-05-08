@@ -47,43 +47,43 @@ namespace Tracker.Controllers
             return View("Add", bed);
         }
 
-		[HttpGet]
-		public IActionResult AddBedToSeed(int id)
-		{
-			Seed theSeed = context.Seeds.Find(id);
+		//[HttpGet]
+		//public IActionResult AddBedToSeed(int id)
+		//{
+		//	Seed theSeed = context.Seeds.Find(id);
 
-			List<Bed> possibleBeds = context.Beds.ToList();
+		//	List<Bed> possibleBeds = context.Beds.ToList();
 
-			AddBedViewModel viewModel = new AddBedViewModel(theSeed, possibleBeds);
-			return View(viewModel);
-		}
+		//	AddBedViewModel viewModel = new AddBedViewModel(theSeed, possibleBeds);
+		//	return View(viewModel);
+		//}
 
-        [HttpPost]
-        public IActionResult ProcessAddBedToSeed(AddBedViewModel viewModel)
-        {
-            if (ModelState.IsValid)
-            {
-                int bedId = viewModel.BedId;
-                int seedId = viewModel.SeedId;
+        //[HttpPost]
+        //public IActionResult ProcessAddBedToSeed(AddBedViewModel viewModel)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        int bedId = viewModel.BedId;
+        //        int seedId = viewModel.SeedId;
 
-                //access seeds property in bed table and look for bedId that matches the one selected
-                //access seeds table and selected seed
-                //if seed already has a relationship with bed it won't be found and won't be added
-                Bed theBed = context.Beds.Include(b=>b.Seeds).Where(b => b.Id == bedId).First();
-                Seed theSeed = context.Seeds.Where(s => s.Id == seedId).First();
+        //        //access seeds property in bed table and look for bedId that matches the one selected
+        //        //access seeds table and selected seed
+        //        //if seed already has a relationship with bed it won't be found and won't be added
+        //        Bed theBed = context.Beds.Include(b=>b.Seeds).Where(b => b.Id == bedId).First();
+        //        Seed theSeed = context.Seeds.Where(s => s.Id == seedId).First();
 
 
-                    theSeed.Beds.Add(theBed);
+        //            theSeed.Beds.Add(theBed);
 
-                    context.SaveChanges();
+        //            context.SaveChanges();
                 
               
 
-                return Redirect("/Seed/Detail/" + seedId);
-            }
-            return View(viewModel);
+        //        return Redirect("/Seed/Detail/" + seedId);
+        //    }
+        //    return View(viewModel);
             
-        }
+        //}
         public IActionResult Delete()
         {
             ViewBag.beds = context.Beds.ToList();

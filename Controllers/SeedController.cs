@@ -52,43 +52,8 @@ namespace Tracker.Controllers
             return View("Add", seed);
         }
 
-        [HttpGet]
-        public IActionResult AddSeedToBed(int id)
-        {
-            Bed theBed = context.Beds.Find(id);
+     
 
-            List<Seed> possibleSeeds = context.Seeds.ToList();
-
-            AddSeedViewModel addSeedViewModel = new AddSeedViewModel(theBed, possibleSeeds);
-            return View(addSeedViewModel);
-        }
-
-        [HttpPost]
-        public IActionResult AddSeedToBed(AddSeedViewModel viewModel)
-        {
-            if (ModelState.IsValid)
-            {
-                int bedId = viewModel.BedId;
-               int seedId = viewModel.SeedId;
-
-                //is binding the seedId to the BedId from the viewModel
-                //
-                Seed theSeed = context.Seeds.Include(b => b.Beds).Where(s => s.Id == seedId).First();
-                theSeed.WaterSchedule = viewModel.WaterSchedule;
-                theSeed.DatePlanted = viewModel.DatePlanted;
-
-                Bed theBed = context.Beds.Where(j => j.Id == bedId).First();
-
-                
-
-                theBed.Seeds.Add(theSeed);
-
-                context.SaveChanges();
-
-                return Redirect("/Bed/Detail/" + bedId);
-            }
-            return View("AddSeedToBed", viewModel);
-        }
 
         public IActionResult Delete()
 		{
