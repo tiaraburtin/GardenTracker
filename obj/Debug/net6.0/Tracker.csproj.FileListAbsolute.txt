@@ -1291,3 +1291,20 @@ C:\Users\7teli\Desktop\LaunchCode\NewClone\GardenTracker\obj\Debug\net6.0\Tracke
 C:\Users\7teli\Desktop\LaunchCode\NewClone\GardenTracker\obj\Debug\net6.0\Tracker.genruntimeconfig.cache
 C:\Users\7teli\Desktop\LaunchCode\NewClone\GardenTracker\obj\Debug\net6.0\ref\Tracker.dll
 >>>>>>> 972fd100dd49d44004f007dc3c2ae9d7e0137ace
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\Tracker.csproj.AssemblyReference.cache
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\Tracker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\Tracker.AssemblyInfoInputs.cache
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\Tracker.AssemblyInfo.cs
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\Tracker.csproj.CoreCompileInputs.cache
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\Tracker.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\Tracker.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\Tracker.RazorAssemblyInfo.cache
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\Tracker.RazorAssemblyInfo.cs
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\staticwebassets\msbuild.Tracker.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\staticwebassets\msbuild.build.Tracker.props
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Tracker.props
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Tracker.props
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\Tracker.dll
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\refint\Tracker.dll
+C:\Users\7teli\Desktop\LaunchCode\NewProjectCopy\GardenTracker\obj\Debug\net6.0\Tracker.pdb

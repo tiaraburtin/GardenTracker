@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "vB1fhaiLVULLwxTZMHKzoNPBuTyf580ylqZw8Abea9Cb2gAWFMpViogFWq9ymX+uBmO18FAVO68P4rnYAxTNPQ==",
+  "dgSpecHash": "626hWvH+t1HGtIKZ0r7ZdSL6tzUTHU7JfT8q5AzWMT6PobIrI8pikOKv32FGNrOGsv8waMtscO4xz2Cf4MSRRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\InProgress\\GardenTracker\\Tracker.csproj",
-=======
-  "dgSpecHash": "P8ChqQpxVKXIpC3xGtM50evDMQGIyuu+IIaMSs/P59nEigMCUktJ2wW6NUog3P1mgULBbZ6VgnBFHVfdl7o9jA==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewClone\\GardenTracker\\Tracker.csproj",
->>>>>>> 972fd100dd49d44004f007dc3c2ae9d7e0137ace
+  "projectFilePath": "C:\\Users\\7teli\\Desktop\\LaunchCode\\NewProjectCopy\\GardenTracker\\Tracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\7teli\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\7teli\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
@@ -193,5 +187,12 @@
     "C:\\Users\\7teli\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\7teli\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\7teli\\Desktop\\LaunchCode\\NewProjectCopy\\GardenTracker\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
