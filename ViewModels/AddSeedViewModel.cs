@@ -7,10 +7,10 @@ namespace Tracker.ViewModels
     public class AddSeedViewModel
     {
         public int SeedId { get; set; }
-        public int BedId { get; set; }
+        public int WaterId { get; set; }
 
         public string? Name { get; set; }
-        public Bed? Bed { get; set; }
+        public Water? Water { get; set; }
 
        
         public string? WaterSchedule { get; set; }
@@ -19,7 +19,7 @@ namespace Tracker.ViewModels
 
         public List<SelectListItem>? Seeds { get; set; }
 
-        public AddSeedViewModel(Bed theBed, List<Seed> possibleSeeds)
+        public AddSeedViewModel(Water theWater, List<Seed> possibleSeeds)
         {
             Seeds = new List<SelectListItem>();
             foreach (var seed in possibleSeeds)
@@ -31,7 +31,7 @@ namespace Tracker.ViewModels
                 });
             }
             //why do we need this?
-            Bed = theBed;
+            Water = theWater;
         }
 
         public AddSeedViewModel()

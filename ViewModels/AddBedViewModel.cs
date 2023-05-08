@@ -8,7 +8,7 @@ namespace Tracker.ViewModels
         public int BedId { get; set; }
         public string? Name { get; set; }
 
-        public int SeedId { get; set; }
+        public int WaterId { get; set; }
 
         public Bed? Bed { get; set; }
 

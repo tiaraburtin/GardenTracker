@@ -81,10 +81,10 @@ namespace Tracker.Controllers
         {
 
 			Seed theSeed = context.Seeds
-		   .Include(j => j.Beds)
+		   .Include(j => j.Waters
 		   .FirstOrDefault(j =>j.Id == id);
 
-            SeedDetailViewModel viewModel = new SeedDetailViewModel(theSeed);
+            WaterSeedDetailViewModel viewModel = new WaterSeedDetailViewModel(theSeed);
 
 			return View(viewModel);
 

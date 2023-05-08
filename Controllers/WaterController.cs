@@ -37,43 +37,49 @@ namespace Tracker.Controllers
             return View(water);
         }
 
-        
-
-        //[HttpPost]
-        //public IActionResult AddWaterSeedToBed(AddSeedViewModel viewModel)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-
-        //        int seedId = viewModel.SeedId;
-
-        //        //is binding the seedId to the BedId from the viewModel
-        //        //
-        //        Seed theSeed = context.Water.Include(b => b.Beds).Where(s => s.Id == seedId).First();
-        //        Bed theBed = context.Beds.Where(j => j.Id == bedId).First();
 
 
+        [HttpPost]
+        public IActionResult AddWaterSeedToBed(AddWaterSeedToBedViewModel viewModel)
+        {
+            //this is unfinished, im confused on how to connect seed and bed to the water id
+            if (ModelState.IsValid)
+            {
 
-        //        theBed.Seeds.Add(theSeed);
+                int seedId = viewModel.SeedId;
+                int bedId = viewModel.BedId;
+                int waterId = viewModel.WaterId;
 
-        //        context.SaveChanges();
 
-        //        return Redirect("/Bed/Detail/" + bedId);
-        //    }
-        //    return View("AddSeedToBed", viewModel);
-        //}
+                Seed theSeed = context.Seed.Include(e => e.Water).Where(e => e.Id == seedId).First();
+                Bed theBed = context.Bed.Where(t => t.Id == waterId).First();
 
-        //[HttpGet]
-        //public IActionResult AddWaterSeedToBed(int id)
-        //{
-        //    Bed theBed = context.Beds.Find(id);
 
-        //    List<Seed> possibleSeeds = context.Seeds.ToList();
+                //Seed theSeed = context.Water.Include(b => b.Beds).Where(s => s.Id == seedId).First();
+                //Bed theBed = context.Beds.Where(j => j.Id == bedId).First();
 
-        //    AddSeedViewModel addSeedViewModel = new AddSeedViewModel(theBed, possibleSeeds);
-        //    return View(addSeedViewModel);
-        //}
+
+
+                theBed.Seeds.Add(theSeed);
+
+                context.SaveChanges();
+
+                return Redirect("/Bed/Detail/" + bedId);
+            }
+            return View("AddSeedToBed", viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult AddWaterSeedToBed(int id)
+        {
+            Bed theBed = context.Beds.Find(id);
+
+            List<Seed> possibleSeeds = context.Seeds.ToList();
+
+            AddSeedViewModel addSeedViewModel = new AddSeedViewModel(theBed, possibleSeeds);
+            return View(addSeedViewModel);
+        }
     }
 
-    }
+}
 
