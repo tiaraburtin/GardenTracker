@@ -32,8 +32,8 @@ namespace Tracker.Data
             modelBuilder.Entity<Water>()
             .HasMany(f => f.Seeds)
             .WithMany(f => f.Waters)
-             .UsingEntity(j => j.ToTable("SeedWater"));
-
+             .UsingEntity(j => j.ToTable("WaterSeed"));
+            
             modelBuilder.Entity<Water>()
             .HasMany(f => f.Beds)
             .WithMany(f => f.Waters)

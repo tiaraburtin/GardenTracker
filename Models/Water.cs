@@ -23,11 +23,11 @@ namespace Tracker.Models
 
         public string Bedname { get; set; }
 
-        public Water(DateTime datePlanted, DateTime needsWater)
+        public Water(DateTime datePlanted)
         {
 
             DatePlanted = datePlanted;
-            NeedsWater = ConvertWaterToTime(this.DatePlanted);
+            NeedsWater = ConvertWaterToTime();
             Beds = new List<Bed>();
         }
         public Water()
@@ -35,7 +35,7 @@ namespace Tracker.Models
 
         }
 
-        public DateTime ConvertWaterToTime(DateTime datePlanted)
+        public DateTime ConvertWaterToTime()
         {
             ////if (waterSchedule == null || datePlanted == null )
             ////{
@@ -46,19 +46,19 @@ namespace Tracker.Models
             {
                 if (seed.WaterSchedule == "1")
                 {
-                    NeedsWater = datePlanted.AddDays(7);
+                    NeedsWater = DatePlanted.AddDays(7);
                 }
                 else if (seed.WaterSchedule == "2")
                 {
-                    NeedsWater = datePlanted.AddDays(3);
+                    NeedsWater = DatePlanted.AddDays(3);
                 }
                 else if (seed.WaterSchedule == "3")
                 {
-                    NeedsWater = datePlanted.AddDays(14);
+                    NeedsWater = DatePlanted.AddDays(14);
                 }
                 else if (seed.WaterSchedule == "4")
                 {
-                    NeedsWater = datePlanted.AddMinutes(1);
+                    NeedsWater = DatePlanted.AddMinutes(1);
                 }
                 return (NeedsWater);
             }
