@@ -10,13 +10,14 @@ namespace Tracker.ViewModels
 
         public int WaterId { get; set; }
         public Water? Water { get; set; }
+        public Bed? Bed { get; set; }
 
         public List<SelectListItem>? Seed { get; set; }
         public int SeedId { get; set; }
-        public List<SelectListItem>? Bed { get; set; }
+        public List<SelectListItem>? Waters { get; set; }
         public int BedId { get; set; }
 
-        public AddWaterSeedToBedViewModel(Water theWater, List<Seed> seeds)
+        public AddWaterSeedToBedViewModel(Water? theWater, List<Seed>? seeds)
         {
             Seed = new List<SelectListItem>();
 
@@ -32,20 +33,20 @@ namespace Tracker.ViewModels
             Water = theWater;
         }
 
-        public AddWaterSeedToBedViewModel(Water theWater, List<Bed> beds)
+        public AddWaterSeedToBedViewModel(Bed? theBed, List<Water>? waters)
         {
-            Bed = new List<SelectListItem>();
+            Waters = new List<SelectListItem>();
 
-            foreach (var bed in beds)
+            foreach (var water in waters)
             {
-                Bed.Add(new SelectListItem
+                Waters.Add(new SelectListItem
                 {
-                    Value = bed.Id.ToString(),
-                    Text = bed.Name,
+                    Value = water.Id.ToString(),
+                    
                 });
             }
 
-            Water = theWater;
+            Bed = theBed;
         }
 
         public AddWaterSeedToBedViewModel()

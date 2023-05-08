@@ -39,7 +39,7 @@ namespace Tracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddSeed(Seed seed)
+        public IActionResult Add(Seed seed)
         {
             if (ModelState.IsValid)
             {
@@ -52,7 +52,36 @@ namespace Tracker.Controllers
             return View("Add", seed);
         }
 
-     
+        [HttpGet]
+        public IActionResult AddWater(int id)
+        {
+            Water? theWater = context.Waters.Find(id);
+            List<Seed>? possibleSeeds = context.Seeds.ToList();
+
+            AddWaterSeedToBedViewModel viewModel = new AddWaterSeedToBedViewModel(theWater, possibleSeeds);
+
+            return View("AddSeedToWater", viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult AddWater(AddWaterSeedToBedViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                int waterId = viewModel.WaterId;
+                int seedId = viewModel.SeedId;
+
+                Water theWater = context.Waters.Include(p => p.Seeds).Where(e => e.Id == waterId).First();
+                Seed theSeed = context.Seeds.Where(s => s.Id == seedId).First();
+
+                theWater.Seeds.Add(theSeed);
+                context.SaveChanges();
+                return Redirect("Bed/Detail" + waterId);
+            }
+            return View(viewModel);
+           }
+
+
 
 
         public IActionResult Delete()
@@ -81,12 +110,12 @@ namespace Tracker.Controllers
         {
 
             Seed theSeed = context.Seeds
-           .Include(j => j.Waters
-           .FirstOrDefault(j => j.Id == id);
+           .Include(j => j.Waters)
+           .Where(j => j.Id == id).First();
 
-            SeedDetailViewModel viewModel = new SeedDetailViewModel(theSeed);
+            //SeedDetailViewModel viewModel = new SeedDetailViewModel(theSeed);
 
-			return View(viewModel);
+			return View(theSeed);
 
 		
         }

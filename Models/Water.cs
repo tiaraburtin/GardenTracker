@@ -1,12 +1,15 @@
-﻿using System.Diagnostics.Metrics;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Metrics;
 using System.Security.Policy;
 
 namespace Tracker.Models
 {
+    [Keyless]
+
     public class Water
     {
-        public int Id { get; set; }
 
+        public int Id { get; set; }
 
         public DateTime DatePlanted { get; set; }
 
@@ -15,8 +18,10 @@ namespace Tracker.Models
         public ICollection<Seed>? Seeds { get; set; }
 
         public ICollection<Bed>? Beds { get; set; }
-        public List<string>? seedname { get; set; }
-        public List<string>? bedname { get; set; }
+
+        public string Seedname { get; set; }
+
+        public string Bedname { get; set; }
 
         public Water(DateTime datePlanted, DateTime needsWater)
         {
@@ -24,11 +29,11 @@ namespace Tracker.Models
             DatePlanted = datePlanted;
             NeedsWater = ConvertWaterToTime(this.DatePlanted);
             Beds = new List<Bed>();
-    }
+        }
         public Water()
-            {
+        {
 
-            }
+        }
 
         public DateTime ConvertWaterToTime(DateTime datePlanted)
         {
@@ -59,29 +64,32 @@ namespace Tracker.Models
             }
             return (NeedsWater);
         }
-        public List<string> SeedName()
+
+
+        public String SeedName()
         {
 
             foreach (Seed seed in Seeds)
             {
-                seedname.Add(seed.Name);
-  
+                Seedname = seed.Name;
+
             }
-            return (seedname);
+            return (Seedname);
         }
 
-        public List<string> BedName()
+        public String BedName()
         {
 
             foreach (Bed bed in Beds)
             {
-                bedname.Add(bed.Name);
+                Bedname = bed.Name;
 
             }
-            return (bedname);
+            return (Bedname);
         }
     }
 }
+
 
 
 

@@ -10,35 +10,31 @@ namespace Tracker.ViewModels
         public int BedId { get; set; }
         public string? Name { get; set; }
 
-        public Bed? Bed { get; set; }
+        //public Bed? Bed { get; set; }
 
-        public Water? Water { get; set; }
+        //public Water? Water { get; set; }
+        public string SeedNames { get; set; }
 
-        //public string SeedText { get; set; }
+
 
         //how to rewrite this to where the bed detail is showing the seeds in the bed and their water schedule
         //maybe we dont need this
-        public BedDetailViewModel(Water theWater)
+        public BedDetailViewModel(Bed theBed)
         {
-            WaterId = Water.Id;
-           
-            //how do i add the individual seed with water details?
-            List < Water > theWater = theWater.ToList();
+            BedId = theBed.Id;
+            Name = theBed.Name;
 
+            List<Water> seednames = theBed.Waters.ToList();
 
-            //BedId = theWater.Id;
-            //Name = Seeds.Name;
-            //BedText = "";
-            //List<Bed> beds = theSeed.Beds.ToList();
-
-            for (int i = 0; i < beds.Count; i++)
+            for (int i = 0; i < seednames.Count; i++)
             {
-                BedText += (beds[i].Name);
-                if (i < beds.Count - 1)
+                SeedNames += (seednames[i].SeedName());
+                if (i < seednames.Count - 1)
                 {
-                    BedText += ", ";
+                    SeedNames += ", ";
                 }
             }
-            Seed = theSeed;
+
         }
+    }
     }

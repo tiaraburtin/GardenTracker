@@ -47,16 +47,16 @@ namespace Tracker.Controllers
             return View("Add", bed);
         }
 
-        [HttpGet]
-        public IActionResult AddBedToWater(int id)
-        {
-            Water theWater = context.Waters.Find(id);
+        //[HttpGet]
+        //public IActionResult AddBedToWater(int id)
+        //{
+        //    Water theWater = context.Waters.Find(id);
 
-            List<Bed> possibleBeds = context.Beds.ToList();
+        //    List<Bed> possibleBeds = context.Beds.ToList();
 
-            AddBedViewModel viewModel = new AddBedViewModel(theWater, possibleBeds);
-            return View(viewModel);
-        }
+        //    AddBedViewModel viewModel = new AddBedViewModel(theWater, possibleBeds);
+        //    return View(viewModel);
+        //}
 
         //[HttpPost]
         //public IActionResult ProcessAddBedToSeed(AddBedViewModel viewModel)
@@ -114,8 +114,8 @@ namespace Tracker.Controllers
 
             //Load THE SEEDS on the view model
 
-            BedDetailViewModel viewModel = new BedDetailViewModel(theBed);
-            return View(viewModel);
+            //BedDetailViewModel viewModel = new BedDetailViewModel(theBed);
+            return View(theBed);
         }
     }
 }
