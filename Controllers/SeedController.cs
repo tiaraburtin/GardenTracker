@@ -80,11 +80,11 @@ namespace Tracker.Controllers
 		public IActionResult Detail(int id)
         {
 
-			Seed theSeed = context.Seeds
-		   .Include(j => j.Waters
-		   .FirstOrDefault(j =>j.Id == id);
+            Seed theSeed = context.Seeds
+           .Include(j => j.Waters
+           .FirstOrDefault(j => j.Id == id);
 
-            WaterSeedDetailViewModel viewModel = new WaterSeedDetailViewModel(theSeed);
+            SeedDetailViewModel viewModel = new SeedDetailViewModel(theSeed);
 
 			return View(viewModel);
 

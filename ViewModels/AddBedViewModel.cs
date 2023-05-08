@@ -12,16 +12,13 @@ namespace Tracker.ViewModels
 
         public Bed? Bed { get; set; }
 
-        public Seed? Seed { get; set; }
+        public Water? Water { get; set; }
        
         public List<SelectListItem>? Beds { get; set; }
 
-        public AddBedViewModel(Seed theSeed, List<Bed> possibleBeds)
+        public AddBedViewModel(Water theWater, List<Bed> possibleBeds)
         {
-//<<<<<<< HEAD
 
-//=======
-//>>>>>>> parent of cbdf543 (fixed add beds to seeds)
             Beds = new List<SelectListItem>();
             foreach (var bed in possibleBeds)
             {
@@ -32,7 +29,7 @@ namespace Tracker.ViewModels
                 });
             }
 
-            Seed = theSeed;
+            Water = theWater;
         }
 
         public AddBedViewModel()

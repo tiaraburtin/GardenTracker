@@ -47,16 +47,16 @@ namespace Tracker.Controllers
             return View("Add", bed);
         }
 
-		//[HttpGet]
-		//public IActionResult AddBedToSeed(int id)
-		//{
-		//	Seed theSeed = context.Seeds.Find(id);
+        [HttpGet]
+        public IActionResult AddBedToWater(int id)
+        {
+            Water theWater = context.Waters.Find(id);
 
-		//	List<Bed> possibleBeds = context.Beds.ToList();
+            List<Bed> possibleBeds = context.Beds.ToList();
 
-		//	AddBedViewModel viewModel = new AddBedViewModel(theSeed, possibleBeds);
-		//	return View(viewModel);
-		//}
+            AddBedViewModel viewModel = new AddBedViewModel(theWater, possibleBeds);
+            return View(viewModel);
+        }
 
         //[HttpPost]
         //public IActionResult ProcessAddBedToSeed(AddBedViewModel viewModel)
@@ -76,13 +76,13 @@ namespace Tracker.Controllers
         //            theSeed.Beds.Add(theBed);
 
         //            context.SaveChanges();
-                
-              
+
+
 
         //        return Redirect("/Seed/Detail/" + seedId);
         //    }
         //    return View(viewModel);
-            
+
         //}
         public IActionResult Delete()
         {
@@ -108,7 +108,7 @@ namespace Tracker.Controllers
         public IActionResult Detail(int id)
         {
             Bed theBed = context.Beds
-            .Include(j => j.Seeds)
+            .Include(j => j.Waters)
             .Single(j => j.Id == id);
 
 
