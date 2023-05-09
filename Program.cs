@@ -14,16 +14,14 @@ builder.Services.AddDefaultIdentity<IdentityUser>
     options.Password.RequireUppercase = true;
     options.Password.RequireLowercase = false;
 }).AddEntityFrameworkStores<TrackerDbContext>();
-// Add services to the container.
-// var connectionString = "server=localhost;user=newuser;password=tracker;database=tracker";
-var connectionString = "server=OKORIEPRINCEWIL;user=FLAdmin;password=Spider12345!;database=tracker";
+//Add services to the container.
+
+var connectionString = "server=localhost;user=newuser;password=tracker;database=Tracker";
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 32));
-// builder.Services.AddDbContext<TrackerDbContext>(dbContextOptions => dbContextOptions.UseMySql(connectionString, serverVersion));
-builder.Services.AddDbContext<TrackerDbContext>(dbContextOptions => dbContextOptions.UseSqlServer(connectionString, opt =>
-{
-    opt.EnableRetryOnFailure(5);
-}));
+builder.Services.AddDbContext<TrackerDbContext>(dbContextOptions => dbContextOptions.UseMySql(connectionString, serverVersion));
 var app = builder.Build();
+
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
