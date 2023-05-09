@@ -5,7 +5,7 @@
 <form asp-controller="Water" asp-action="AddWaterSeedToBed" method="post">
 
     <input type="hidden" value="@Model.BedId" name="BedId" />
-    <input type="hidden" value="@ViewBag.NeedsWaterAlert" />
+   
 
     <div class="form-group">
         <label asp-for="SeedId">Seed</label>
@@ -19,7 +19,13 @@
         <span></span>
     </div>
 
+    <script>
+      
+        //(@Model.NeedsWater != null) {
+        //    window.alert(@ViewBag.NeedsWaterAlert);
+        //}
 
+    </script>
 
  
  

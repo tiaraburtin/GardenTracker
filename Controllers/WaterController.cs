@@ -57,10 +57,6 @@ namespace Tracker.Controllers
             if (ModelState.IsValid)
             {
                 Context.Waters.Add(water);
-                if (water.ConvertWaterToTime() == DateTime.Now)
-                {
-                    ViewBag.NeedsWaterAlert = "Hey, it's time to make it rain! (;";
-                }
 
                 Context.SaveChanges();
                 return Redirect("Bed/Detail");
@@ -101,6 +97,12 @@ namespace Tracker.Controllers
                     SeedId = selectedSeed.Id,
                     WaterId = water.Id
                 });
+
+                //foreach ()
+                //    if (water.ConvertWaterToTime() == DateTime.Now)
+                //    {
+                //        ViewBag.NeedsWaterAlert = "Hey, it's time to make it rain! (;";
+                //    }
 
                 Context.SaveChanges();
                 return Redirect("~/Bed/Detail/" + bedId);
