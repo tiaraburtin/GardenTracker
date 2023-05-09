@@ -108,14 +108,16 @@ namespace Tracker.Controllers
         public IActionResult Detail(int id)
         {
             Bed theBed = context.Beds
-            .Include(j => j.Waters)
+            .Include(j => j.SeedWaterBed).ThenInclude(a => a.Seed)
+            .Include(j => j.SeedWaterBed).ThenInclude(a => a.Water)
             .Single(j => j.Id == id);
 
 
             //Load THE SEEDS on the view model
 
-            //BedDetailViewModel viewModel = new BedDetailViewModel(theBed);
-            return View(theBed);
+            BedDetailViewModel viewModel = new BedDetailViewModel(theBed);
+
+            return View(viewModel);
         }
     }
 }

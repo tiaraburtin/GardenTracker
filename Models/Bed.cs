@@ -5,21 +5,19 @@ namespace Tracker.Models
     public class Bed
     {
         public int Id { get; set; }
-        public string Name { get; set; } 
-        public ICollection<Water>? Waters { get; set; }
-
+        public string Name { get; set; }
+        public virtual ICollection<SeedWaterBed>? SeedWaterBed { get; set; }
 
 
         public Bed(string name)
         {
             Name = name;
-            Waters = new List<Water>();
-
+            SeedWaterBed = new HashSet<SeedWaterBed>();
         }
-         public Bed() 
+
+        public Bed()
         {
-   
-        }    
-       
+            SeedWaterBed = new HashSet<SeedWaterBed>();
+        }
     }
 }

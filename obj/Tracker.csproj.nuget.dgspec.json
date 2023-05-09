@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tburt\\OneDrive\\Desktop\\LotusLightCodes\\capestone-project\\GardenTracker\\Tracker.csproj": {}
+    "C:\\repos\\GardenTracker\\Tracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tburt\\OneDrive\\Desktop\\LotusLightCodes\\capestone-project\\GardenTracker\\Tracker.csproj": {
+    "C:\\repos\\GardenTracker\\Tracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tburt\\OneDrive\\Desktop\\LotusLightCodes\\capestone-project\\GardenTracker\\Tracker.csproj",
+        "projectUniqueName": "C:\\repos\\GardenTracker\\Tracker.csproj",
         "projectName": "Tracker",
-        "projectPath": "C:\\Users\\tburt\\OneDrive\\Desktop\\LotusLightCodes\\capestone-project\\GardenTracker\\Tracker.csproj",
-        "packagesPath": "C:\\Users\\tburt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tburt\\OneDrive\\Desktop\\LotusLightCodes\\capestone-project\\GardenTracker\\obj\\",
+        "projectPath": "C:\\repos\\GardenTracker\\Tracker.csproj",
+        "packagesPath": "C:\\Users\\PrincewillOkorie\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\GardenTracker\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\tburt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PrincewillOkorie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/finlocker/_packaging/FinLocker/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {

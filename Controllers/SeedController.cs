@@ -15,26 +15,25 @@ namespace Tracker.Controllers
     public class SeedController : Controller
     {
         private TrackerDbContext context;
-       
+
 
         public SeedController(TrackerDbContext dbContext, ILogger<SeedController> logger)
         {
             context = dbContext;
-       
         }
 
 
         public IActionResult Index()
         {
-			List<Seed> seeds = context.Seeds.ToList();
-			//List<Seed> seeds = context.Seeds.ToList();
+            List<Seed> seeds = context.Seeds.ToList();
+            //List<Seed> seeds = context.Seeds.ToList();
             return View(seeds);
         }
 
         [HttpGet]
         public IActionResult Add()
         {
-            Seed seed = new Seed();
+            AddSeedViewModel seed = new AddSeedViewModel();
             return View(seed);
         }
 
@@ -62,11 +61,10 @@ namespace Tracker.Controllers
         [HttpGet]
         public IActionResult AddWater(int id)
         {
-            Water? theWater = context.Waters.Find(id);
-            List<Seed>? possibleSeeds = context.Seeds.ToList();
+            Bed? theBed = context.Beds.First(a => a.Id == id);
+            List<Seed> possibleSeeds = context.Seeds.ToList();
 
-            AddWaterSeedToBedViewModel viewModel = new AddWaterSeedToBedViewModel(theWater, possibleSeeds);
-
+            AddWaterSeedToBedViewModel viewModel = new AddWaterSeedToBedViewModel(theBed, possibleSeeds);
             return View("AddSeedToWater", viewModel);
         }
 
@@ -77,54 +75,55 @@ namespace Tracker.Controllers
             {
                 int waterId = viewModel.WaterId;
                 int seedId = viewModel.SeedId;
+                int bedId = viewModel.BedId;
 
-                Water theWater = context.Waters.Include(p => p.Seeds).Where(e => e.Id == waterId).First();
+                Water theWater = context.Waters.Include(p => p.SeedWaterBed).Where(e => e.Id == waterId).First();
                 Seed theSeed = context.Seeds.Where(s => s.Id == seedId).First();
+                Bed bed = context.Beds.First(s => s.Id == bedId);
 
-                theWater.Seeds.Add(theSeed);
+                theWater.SeedWaterBed.Add(new SeedWaterBed
+                {
+                    BedId = bedId,
+                    SeedId = seedId,
+                    WaterId = waterId
+                });
                 context.SaveChanges();
                 return Redirect("Bed/Detail" + waterId);
             }
+
             return View(viewModel);
-           }
-
-
+        }
 
 
         public IActionResult Delete()
-		{
-			ViewBag.seeds = context.Seeds.ToList();
-
-			return View();
-		}
-
-		[HttpPost]
-		public IActionResult DeleteSeed(int[] seedIds)
-		{
-			foreach (int seedId in seedIds)
-			{
-				Seed theSeed = context.Seeds.Find(seedId);
-				context.Seeds.Remove(theSeed);
-			}
-
-			context.SaveChanges();
-
-			return Redirect("/Seed");
-		}
-
-
-		public IActionResult Detail(int id)
         {
+            ViewBag.seeds = context.Seeds.ToList();
 
-            Seed theSeed = context.Seeds
-           .Include(j => j.Waters)
-           .Where(j => j.Id == id).First();
+            return View();
+        }
 
-            //SeedDetailViewModel viewModel = new SeedDetailViewModel(theSeed);
+        [HttpPost]
+        public IActionResult DeleteSeed(int[] seedIds)
+        {
+            foreach (int seedId in seedIds)
+            {
+                Seed theSeed = context.Seeds.Find(seedId);
+                context.Seeds.Remove(theSeed);
+            }
 
-			return View(theSeed);
+            context.SaveChanges();
 
-		
+            return Redirect("/Seed");
+        }
+
+
+        public IActionResult Detail(int id)
+        {
+            Seed theSeed = context.Seeds.First(j => j.Id == id);
+
+            SeedDetailViewModel viewModel = new SeedDetailViewModel(theSeed);
+
+            return View(viewModel);
         }
     }
 }

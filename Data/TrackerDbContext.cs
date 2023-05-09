@@ -29,15 +29,61 @@ namespace Tracker.Data
             //.UsingEntity(j => j.ToTable("BedSeed"));
             //base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Water>()
-            .HasMany(f => f.Seeds)
-            .WithMany(f => f.Waters)
-             .UsingEntity(j => j.ToTable("WaterSeed"));
-            
-            modelBuilder.Entity<Water>()
-            .HasMany(f => f.Beds)
-            .WithMany(f => f.Waters)
-            .UsingEntity(j => j.ToTable("WaterBed"));
+            modelBuilder.Entity<Seed>(builder =>
+            {
+                builder.ToTable("Seed");
+
+                builder.HasKey(a => a.Id);
+
+            });
+
+            modelBuilder.Entity<Bed>(builder =>
+            {
+                builder.ToTable("Bed");
+
+                builder.HasKey(a => a.Id);
+            });
+
+            modelBuilder.Entity<Water>(builder =>
+            {
+                builder.ToTable("Water");
+
+                builder.HasKey(a => a.Id);
+            });
+
+            modelBuilder.Entity<SeedWaterBed>(builder =>
+            {
+                builder.ToTable("SeedWaterBed");
+
+                builder.HasKey(a => new
+                {
+                    a.BedId,
+                    a.SeedId,
+                    a.WaterId,
+                });
+
+                builder.HasOne(a => a.Seed)
+                    .WithMany(a => a.SeedWaterBed)
+                    .HasForeignKey(a => a.SeedId);
+
+                builder.HasOne(a => a.Water)
+                    .WithMany(a => a.SeedWaterBed)
+                    .HasForeignKey(a => a.WaterId);
+
+                builder.HasOne(a => a.Bed)
+                    .WithMany(a => a.SeedWaterBed)
+                    .HasForeignKey(a => a.BedId);
+            });
+
+            // modelBuilder.Entity<Water>()
+            // .HasMany(f => f.Seeds)
+            // .WithMany(f => f.Waters)
+            //  .UsingEntity(j => j.ToTable("WaterSeed"));
+            //
+            // modelBuilder.Entity<Water>()
+            // .HasMany(f => f.Beds)
+            // .WithMany(f => f.Waters)
+            // .UsingEntity(j => j.ToTable("WaterBed"));
 
       
             base.OnModelCreating(modelBuilder);

@@ -4,8 +4,6 @@ using System.Security.Policy;
 
 namespace Tracker.Models
 {
-    [Keyless]
-
     public class Water
     {
 
@@ -13,11 +11,9 @@ namespace Tracker.Models
 
         public DateTime DatePlanted { get; set; }
 
-        public DateTime NeedsWater { get; set; }
+        private DateTime NeedsWater { get; set; }
 
-        public ICollection<Seed>? Seeds { get; set; }
-
-        public ICollection<Bed>? Beds { get; set; }
+        public virtual ICollection<SeedWaterBed>? SeedWaterBed { get; set; }
 
         public string Seedname { get; set; }
 
@@ -28,8 +24,7 @@ namespace Tracker.Models
 
             DatePlanted = datePlanted;
             NeedsWater = ConvertWaterToTime();
-            Beds = new List<Bed>();
-            Seeds = new List<Seed>();
+            SeedWaterBed = new HashSet<SeedWaterBed>();
         }
         public Water()
         {
@@ -43,21 +38,21 @@ namespace Tracker.Models
             ////    return null;
             //}
 
-            foreach (Seed seed in Seeds)
+            foreach (SeedWaterBed waterBed in SeedWaterBed)
             {
-                if (seed.WaterSchedule == "1")
+                if (waterBed.Seed.WaterSchedule == "1")
                 {
                     NeedsWater = DatePlanted.AddDays(7);
                 }
-                else if (seed.WaterSchedule == "2")
+                else if (waterBed.Seed.WaterSchedule == "2")
                 {
                     NeedsWater = DatePlanted.AddDays(3);
                 }
-                else if (seed.WaterSchedule == "3")
+                else if (waterBed.Seed.WaterSchedule == "3")
                 {
                     NeedsWater = DatePlanted.AddDays(14);
                 }
-                else if (seed.WaterSchedule == "4")
+                else if (waterBed.Seed.WaterSchedule == "4")
                 {
                     NeedsWater = DatePlanted.AddMinutes(1);
                 }
@@ -70,9 +65,9 @@ namespace Tracker.Models
         public String SeedName()
         {
 
-            foreach (Seed seed in Seeds)
+            foreach (SeedWaterBed seed in SeedWaterBed)
             {
-                Seedname = seed.Name;
+                Seedname = seed.Seed.Name;
 
             }
             return (Seedname);
@@ -81,9 +76,9 @@ namespace Tracker.Models
         public String BedName()
         {
 
-            foreach (Bed bed in Beds)
+            foreach (SeedWaterBed bed in SeedWaterBed)
             {
-                Bedname = bed.Name;
+                Bedname = bed.Bed.Name;
 
             }
             return (Bedname);

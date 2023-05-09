@@ -20,11 +20,11 @@ namespace Tracker.ViewModels
             SeedId = theSeed.Id;
             Name = theSeed.Name;
 
-            List<Water> bednames = theSeed.Waters.ToList();
+            List<SeedWaterBed> bednames = theSeed.SeedWaterBed.ToList();
 
             for (int i = 0; i < bednames.Count; i++)
             {
-                BedNames += (bednames[i].BedName());
+                BedNames += (bednames[i].Bed.Name);
                 if (i < bednames.Count - 1)
                 {
                     BedNames += ", ";
