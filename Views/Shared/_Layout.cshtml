@@ -1,4 +1,5 @@
-﻿﻿
+﻿@using Tracker.Controllers;
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +50,14 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.js"></script>
+
+            <script>
+                if (@ViewBag.NeedsWaterAlert = true)
+                {
+                   window.alert("Hey! It's time to make it rain (;)") 
+                };
+            </script>
+
         </main>
 
     </div>
