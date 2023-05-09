@@ -30,7 +30,7 @@ namespace Tracker.Models
         {
 
         }
-
+     
         public DateTime ConvertWaterToTime()
         {
             ////if (waterSchedule == null || datePlanted == null )
@@ -40,6 +40,8 @@ namespace Tracker.Models
 
             foreach (SeedWaterBed waterBed in SeedWaterBed)
             {
+                DatePlanted = DatePlanted.AddSeconds(-DatePlanted.Second);
+
                 if (waterBed.Seed.WaterSchedule == "1")
                 {
                     NeedsWater = DatePlanted.AddDays(7);

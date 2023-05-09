@@ -98,11 +98,12 @@ namespace Tracker.Controllers
                     WaterId = water.Id
                 });
 
-                //foreach ()
-                //    if (water.ConvertWaterToTime() == DateTime.Now)
-                //    {
-                //        ViewBag.NeedsWaterAlert = "Hey, it's time to make it rain! (;";
-                //    }
+
+                if (water.ConvertWaterToTime())
+                {
+                    ViewBag.NeedsWaterAlert = true;
+                }
+
 
                 Context.SaveChanges();
                 return Redirect("~/Bed/Detail/" + bedId);
