@@ -47,12 +47,13 @@ namespace Tracker.Controllers
                 Seed newSeed = new Seed
                 {
                     Name = addSeedViewModel.Name,
+                    HardinessZone = addSeedViewModel.HardinessZone,
                     
                 };
                 context.Seeds.Add(newSeed);
                 context.SaveChanges();
 
-                return Redirect("/Seed/");
+                return Redirect("Seed");
             }
 
             return View("Add",addSeedViewModel);
@@ -89,7 +90,7 @@ namespace Tracker.Controllers
 
                 return Redirect("/Bed/Detail/" + bedId);
             }
-            return View(viewModel);
+            return View("AddSeedToBed", viewModel);
         }
 
 		public IActionResult Delete()

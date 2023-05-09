@@ -11,7 +11,7 @@ using Tracker.Data;
 namespace Tracker.Migrations
 {
     [DbContext(typeof(TrackerDbContext))]
-    [Migration("20230502182126_InitialMigration")]
+    [Migration("20230505205805_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

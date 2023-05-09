@@ -16,6 +16,7 @@ else
             <th>Id
             <th>Garden Bed</th>
             
+            
             <th>Delete</th>
         </tr>
         @foreach (var bed in Model)
@@ -34,9 +35,10 @@ else
             </tr>
         }
     </table>
+    
 }
     <p><a asp-controller="Bed" asp-action="Add" class="btn btn-secondary">Add Garden</a></p>
 
     <button type="submit" formaction="@Url.Action("DeleteBed", "Bed")" class="btn btn-secondary">Delete Selected Gardens</button>
-
+    </div>
     </form>
