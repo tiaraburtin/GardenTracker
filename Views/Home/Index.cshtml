@@ -4,6 +4,17 @@
 
 <div class="text-center">
     <h1 class="display-10 font-weight-bold">Keep Your Garden Beds Hydrated! </h1>
+    <h2>Watering schedule:</h2>
+    <div style=" border: 1px solid black; display: flex; flex-direction: column; align-items: center; justify-content: flex-start">
+        @foreach (var error in ViewBag.errors)
+        {
+            <p style=" color: red ">@error</p>
+        }
+        @foreach (var message in ViewBag.messages)
+        {
+            <p style=" color: green" >@message</p>
+        }
+    </div>
     <center>
         <img src="https://media.cnn.com/api/v1/images/stellar/prod/230405132308-01-gardening-stock.jpg?c=16x9&q=h_720,w_1280,c_fill/f_webp">
     </center>
@@ -18,3 +29,6 @@
         <a class="nav-link text-white btn btn-dark" asp-area="" asp-controller="Seed" asp-action="Add">Let's get started!</a>
     </p>
 </div>
+
+
+

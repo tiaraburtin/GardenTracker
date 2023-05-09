@@ -14,7 +14,7 @@ namespace Tracker.ViewModels
 
         public Seed? Seed { get; set; }
 
-        public string SeedText { get; set; }
+        public string? SeedText { get; set; }
 
         public BedDetailViewModel(Bed theBed)
         {

@@ -15,6 +15,7 @@ namespace Tracker.ViewModels
         public DateTime DatePlanted { get; set; }
 
         public string? HardinessZone { get; set; }
+        public string? WaterSchedule { get; set; }
 
         public List<SelectListItem>? Seeds { get; set; }
 
@@ -39,5 +40,7 @@ namespace Tracker.ViewModels
         public AddSeedViewModel()
         {
         }
+
+        
     }
 }

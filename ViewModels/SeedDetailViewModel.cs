@@ -17,6 +17,8 @@ namespace Tracker.ViewModels
 
 		public DateTime DatePlanted { get; set;}
 
+		public string WaterSchedule { get; set; }
+
 		public SeedDetailViewModel(Seed theSeed)
 		{
 			SeedId = theSeed.Id;
@@ -25,6 +27,7 @@ namespace Tracker.ViewModels
 			List<Bed> beds = theSeed.Beds.ToList();
             DatePlanted = theSeed.DatePlanted;
             HardinessZone = theSeed.HardinessZone;
+			WaterSchedule = theSeed.WaterSchedule;
 
             for (int i = 0; i < beds.Count; i++)
 			{

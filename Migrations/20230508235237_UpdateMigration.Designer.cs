@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tracker.Data;
 
@@ -10,9 +11,10 @@ using Tracker.Data;
 namespace Tracker.Migrations
 {
     [DbContext(typeof(TrackerDbContext))]
-    partial class TrackerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230508235237_UpdateMigration")]
+    partial class UpdateMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -263,9 +265,6 @@ namespace Tracker.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("UserId")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("WaterSchedule")
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");

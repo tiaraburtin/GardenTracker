@@ -51,7 +51,8 @@ namespace Tracker.Controllers
                     Name = addSeedViewModel.Name,
                     DatePlanted = addSeedViewModel.DatePlanted,
                     HardinessZone = addSeedViewModel.HardinessZone,
-                    UserId = addSeedViewModel.UserId
+                    UserId = addSeedViewModel.UserId,
+                    WaterSchedule = addSeedViewModel.WaterSchedule
                 };
 
                 context.Seeds.Add(newSeed);

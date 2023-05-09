@@ -14,7 +14,7 @@
         </div>
 
         <div class="form-group">
-            <label asp-for="DatePlanted">Date Planted</label>
+            <label asp-for="DatePlanted">Date Watered</label>
             <input asp-for="DatePlanted" class="form-control" />
             <span></span>
             <span asp-validation-for="DatePlanted" class="text-danger"></span>
@@ -40,6 +40,18 @@
             <span></span>
         </div>
         <br />
+
+        <div class="form-group">
+            <label asp-for="WaterSchedule">Watering Schedule</label>
+            <select asp-for="WaterSchedule">
+                <option value="0">Please Select One</option>
+                <option value="7">Once a week</option>
+                <option value="3.5">Twice a week</option>
+                <option value="14">Every other week</option>
+                <option value="4">DEMO</option>
+            </select>
+            <span></span>
+        </div>
 
         <input type="submit" value="Add Seed" class="btn btn-light" />
         @* <button type="submit" formaction="@Url.Action("GetZone", "ZoneAPI")" class="btn btn-danger">Get Hardiness zone from api</button>*@
