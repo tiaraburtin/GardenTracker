@@ -1,7 +1,7 @@
 ﻿@model Tracker.ViewModels.AddSeedViewModel
 
 <h1>Add Seed to @Model.Bed.Name Garden Bed: </h1>
-<body style="background-color: #87A96B">
+<body style="background-color: #93C572">
     <form asp-controller="Seed" asp-action="ProcessAddSeedToBed" method="post">
         <input type="hidden" value="@Model.Bed.Id" name="BedId" />
 

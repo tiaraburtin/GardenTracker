@@ -1,18 +1,45 @@
 html {
-  font-size: 14px;
+    font-size: 22px;
 }
 
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 18px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    font-family: 'Lucida', monospace;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 80px;
+    font-family: 'Courier New', monospace;
+}
+
+.khaki {
+    background-color: #d1ca08;
+}
+
+.image-bg {
+    background-image: url("https://www.economical.com/ECOCOM/media/EcoComMedia/Site%20imagery/Blog/Blog%20entries/Home-GardenTips-Blog_945x525.jpg?ext=.jpg");
+    opacity: 0.7;
+}
+
+.centered {
+    position: absolute;
+    text-align: center;
+    color: navajowhite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bolder;
+    opacity: 0.5;
+}
+
+a{
+    color: black;
 }

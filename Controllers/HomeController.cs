@@ -23,9 +23,10 @@ namespace Home.Controllers
 
         public IActionResult Index()
         {
+            string id = UserManager.GetUserId(User);
             List<string> messages = new List<string>();
             List<string> errors = new List<string>();
-            List<Seed> seeds = context.Seeds.ToList();
+            List<Seed> seeds = context.Seeds.Where(b => b.UserId == id).ToList();
             foreach (var seedz in seeds)
             {
                 if (seedz == null)
@@ -37,7 +38,7 @@ namespace Home.Controllers
                 if (diffBetwnDatePlanted_TimeNow.Days >= float.Parse(seedz.WaterSchedule))
                 {
                     double daysOverDue = Math.Abs(double.Parse(seedz.WaterSchedule) - diffBetwnDatePlanted_TimeNow.Days);
-                    errors.Add( seedz.Name + " is: " + daysOverDue + " days overdue for watering " );
+                    errors.Add( seedz.Name + " is: " + daysOverDue + " day(s) overdue for watering " );
                 }
                 else
                 {

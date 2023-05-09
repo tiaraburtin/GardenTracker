@@ -27,24 +27,39 @@
                         @if (UserManager.GetUserId(User) != null)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Seed" asp-action="Add">Add Seeds</a>
+                                <div class="dropdown">
+
+                                    <a class="" href="#" style="color: black; font-size: 22px" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Seeds       
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Seed" asp-action="Add">Add Seeds</a></li>
+                                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Seed" asp-action="Index">All Seeds</a></li>
+                                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Search" asp-action="Index">Search Seed Inventory</a></li>
+                                    </ul>
+                                </div>
+                                <li><div style=" color: white">sp</div></li>
+                                
                             </li>
+                            <br>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Bed" asp-action="Add">Add Garden Beds</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Seed" asp-action="Index">All Seeds</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Bed" asp-action="Index">All Garden Beds</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Search" asp-action="Index">Search Seed Inventory</a>
+                                <div class="dropdown">
+                                    <a class="" href="#" style="color: black; font-size: 22px" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Beds
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Bed" asp-action="Add">Add Garden Beds</a></li>
+                                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Bed" asp-action="Index">All Garden Beds</a></li>
+
+                                    </ul>
+                                </div>
                             </li>
                         }
                     </ul>
-                    <partial name="_LoginPartial" />
-                </div>
+                        <partial name="_LoginPartial" />
+                    </div>
             </div>
         </nav>
     </header>
