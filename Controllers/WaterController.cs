@@ -99,10 +99,13 @@ namespace Tracker.Controllers
                 });
 
 
-                if (water.ConvertWaterToTime())
-                {
-                    ViewBag.NeedsWaterAlert = true;
-                }
+                //I NEED TO CALL THIS FUNCTION SOMEHWERE BUT WHERE?!
+
+                    if (water.IsItTime())
+                    {
+                        ViewBag.NeedsWaterAlert = true;
+                    }
+
 
 
                 Context.SaveChanges();

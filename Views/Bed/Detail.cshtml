@@ -7,6 +7,21 @@
 
 	<p>Seed: @Model.SeedNames</p>
 
+
+    <script>
+
+        window.addEventListener("load", function () {
+
+
+            if (@ViewBag.NeedsWaterAlert = true)
+        {
+            window.alert("Hey! It's time to make it rain (;)")
+            console.log("It works")
+        }
+        console.log("Nope...")
+                        });
+    </script>
+
 </table>
 
 <a asp-controller="Seed" asp-action="AddWater" asp-route-id="@Model.BedId" class="btn btn-danger">Add seeds to this garden bed</a>

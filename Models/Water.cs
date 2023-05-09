@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.Metrics;
 using System.Security.Policy;
 
@@ -12,6 +13,12 @@ namespace Tracker.Models
         public DateTime DatePlanted { get; set; }
 
         private DateTime NeedsWater { get; set; }
+
+        private bool NeedsWaterAlert
+        {
+            get { return NeedsWaterAlert; }
+            set { NeedsWaterAlert = false; }
+        }
 
         public virtual ICollection<SeedWaterBed>? SeedWaterBed { get; set; }
 
@@ -30,7 +37,7 @@ namespace Tracker.Models
         {
 
         }
-     
+
         public DateTime ConvertWaterToTime()
         {
             ////if (waterSchedule == null || datePlanted == null )
@@ -40,7 +47,6 @@ namespace Tracker.Models
 
             foreach (SeedWaterBed waterBed in SeedWaterBed)
             {
-                DatePlanted = DatePlanted.AddSeconds(-DatePlanted.Second);
 
                 if (waterBed.Seed.WaterSchedule == "1")
                 {
@@ -56,14 +62,18 @@ namespace Tracker.Models
                 }
                 else if (waterBed.Seed.WaterSchedule == "4")
                 {
-                    NeedsWater = DatePlanted.AddMinutes(1);
+                    NeedsWater = DatePlanted.AddSeconds(5);
                 }
-                return (NeedsWater);
-
             }
-            return (NeedsWater);
+                return (NeedsWater);
+            
         }
+        public bool IsItTime()
+        {
 
+            return NeedsWater >= DateTime.UtcNow;
+            
+        }
 
         public String SeedName()
         {
