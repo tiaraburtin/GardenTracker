@@ -11,8 +11,8 @@ using Tracker.Data;
 namespace Tracker.Migrations
 {
     [DbContext(typeof(TrackerDbContext))]
-    [Migration("20230509142350_NewOne")]
-    partial class NewOne
+    [Migration("20230509210847_ANewOne")]
+    partial class ANewOne
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

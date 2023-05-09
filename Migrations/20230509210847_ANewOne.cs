@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Tracker.Migrations
 {
-    public partial class NewOne : Migration
+    public partial class ANewOne : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
