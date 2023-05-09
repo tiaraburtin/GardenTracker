@@ -12,9 +12,9 @@ namespace Tracker.Data
 {
     public class TrackerDbContext: IdentityDbContext<IdentityUser, IdentityRole, string>
     {
-        public DbSet<Seed>? Seeds { get; set; }
-        public DbSet<Bed>?  Beds { get; set; }
-        public DbSet<Water>? Waters { get; set; }
+        public DbSet<Seed> Seeds { get; set; }
+        public DbSet<Bed>  Beds { get; set; }
+        public DbSet<Water> Waters { get; set; }
 
         public TrackerDbContext(DbContextOptions<TrackerDbContext> options)
             : base(options)

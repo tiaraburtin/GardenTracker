@@ -39,17 +39,24 @@ namespace Tracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(Seed seed)
+        public IActionResult Add(AddSeedViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                context.Seeds.Add(seed);
+                Seed newSeed = new Seed
+                {
+                    Name = viewModel.Name,
+                    WaterSchedule = viewModel.WaterSchedule,
+                    HardinessZone = viewModel.HardinessZone
+                };
+
+                context.Seeds.Add(newSeed);
                 context.SaveChanges();
 
                 return Redirect("/Seed/");
             }
 
-            return View("Add", seed);
+            return View("Add", viewModel);
         }
 
         [HttpGet]

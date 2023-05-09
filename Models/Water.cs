@@ -29,6 +29,7 @@ namespace Tracker.Models
             DatePlanted = datePlanted;
             NeedsWater = ConvertWaterToTime();
             Beds = new List<Bed>();
+            Seeds = new List<Seed>();
         }
         public Water()
         {

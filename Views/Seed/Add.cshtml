@@ -1,8 +1,8 @@
-﻿@model Tracker.Models.Seed
+﻿@model Tracker.ViewModels.AddSeedViewModel
 
 <h1>Add Seed</h1>
 
-<form asp-controller="Seed" asp-action="AddSeed" method="post">
+<form asp-controller="Seed" asp-action="Add" method="post">
     <div class="form-group">
         <label asp-for="Name">Name</label>
         <input asp-for="Name" class="form-control" />

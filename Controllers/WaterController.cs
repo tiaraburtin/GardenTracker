@@ -67,7 +67,7 @@ namespace Tracker.Controllers
                 Context.Waters.Add(water);
                 if (water.ConvertWaterToTime() == DateTime.Now)
                 {
-                    ViewBag.NeedsWaterAlert = "Its Time To Water Your Plant";
+                    ViewBag.NeedsWaterAlert = "Hey, it's time to make it rain! (;";
                 }
                 Context.SaveChanges();
                 return Redirect("Bed/Detail");
