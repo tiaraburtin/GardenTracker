@@ -12,13 +12,9 @@ namespace Tracker.Models
 
         public DateTime DatePlanted { get; set; }
 
-        private DateTime NeedsWater { get; set; }
+        public DateTime WaterTime { get; set; }
 
-        private bool NeedsWaterAlert
-        {
-            get { return NeedsWaterAlert; }
-            set { NeedsWaterAlert = false; }
-        }
+        //public bool IsItTime { get; set; }
 
         public virtual ICollection<SeedWaterBed>? SeedWaterBed { get; set; }
 
@@ -30,7 +26,7 @@ namespace Tracker.Models
         {
 
             DatePlanted = datePlanted;
-            NeedsWater = ConvertWaterToTime();
+            WaterTime = ConvertWaterToTime();
             SeedWaterBed = new HashSet<SeedWaterBed>();
         }
         public Water()
@@ -50,30 +46,34 @@ namespace Tracker.Models
 
                 if (waterBed.Seed.WaterSchedule == "1")
                 {
-                    NeedsWater = DatePlanted.AddDays(7);
+                    WaterTime = DatePlanted.AddDays(7);
                 }
                 else if (waterBed.Seed.WaterSchedule == "2")
                 {
-                    NeedsWater = DatePlanted.AddDays(3);
+                    WaterTime = DatePlanted.AddDays(3);
                 }
                 else if (waterBed.Seed.WaterSchedule == "3")
                 {
-                    NeedsWater = DatePlanted.AddDays(14);
+                    WaterTime = DatePlanted.AddDays(14);
                 }
                 else if (waterBed.Seed.WaterSchedule == "4")
                 {
-                    NeedsWater = DatePlanted.AddSeconds(5);
+                    WaterTime = DatePlanted.AddSeconds(5);
                 }
             }
-                return (NeedsWater);
+                return (WaterTime);
             
         }
-        public bool IsItTime()
-        {
-
-            return NeedsWater >= DateTime.UtcNow;
+        //public bool IsItTimeToWater()
+        //{
+        //    if (WaterTime >= DateTime.UtcNow)
+        //        return (IsItTime = true);
+        //    else
+        //    {
+        //        return (IsItTime = false);
+        //    }
             
-        }
+        //}
 
         public String SeedName()
         {

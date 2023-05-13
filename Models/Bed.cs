@@ -8,6 +8,8 @@ namespace Tracker.Models
         public string Name { get; set; }
         public virtual ICollection<SeedWaterBed>? SeedWaterBed { get; set; }
 
+        public bool IsItTime { get; set; }
+        public Water Water { get; set; }
 
         public Bed(string name)
         {
@@ -19,5 +21,19 @@ namespace Tracker.Models
         {
             SeedWaterBed = new HashSet<SeedWaterBed>();
         }
+
+        public bool IsItTimeToWater()
+        {
+
+            if (Water.WaterTime >= DateTime.UtcNow)
+                return (IsItTime = true);
+            else
+            {
+                return (IsItTime = false);
+            }
+
+        }
+
+
     }
 }

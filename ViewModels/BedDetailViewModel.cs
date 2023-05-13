@@ -11,7 +11,9 @@ namespace Tracker.ViewModels
 
         //public Bed? Bed { get; set; }
 
-        //public Water? Water { get; set; }
+        public Water? Water { get; set; }
+        public bool? IsItTime { get; set; }
+
         public string SeedNames { get; set; }
 
 
@@ -21,6 +23,8 @@ namespace Tracker.ViewModels
         {
             BedId = theBed.Id;
             Name = theBed.Name;
+ 
+         
 
             List<SeedWaterBed> seednames = theBed.SeedWaterBed.ToList();
 
