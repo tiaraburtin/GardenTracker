@@ -75,7 +75,7 @@ namespace Tracker.Controllers
         
         
                 int bedId = viewModel.BedId;
-
+                
                 Bed theBed = Context.Beds.First(t => t.Id == bedId);
                 Seed selectedSeed = Context.Seeds.First(a => a.Id == viewModel.SeedId);
 
@@ -84,7 +84,8 @@ namespace Tracker.Controllers
                 {
                     Bedname = theBed.Name,
                     DatePlanted = viewModel.DatePlanted,
-                    Seedname = selectedSeed.Name
+                    Seedname = selectedSeed.Name,
+              
                 });
                 Context.SaveChanges();
 

@@ -6,7 +6,7 @@ namespace Tracker.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string? WaterTime { get; set; }
+        //public string? WaterTime { get; set; }
         public virtual ICollection<SeedWaterBed>? SeedWaterBed { get; set; }
 
 
@@ -17,7 +17,7 @@ namespace Tracker.Models
         {
             Name = name;
             SeedWaterBed = new HashSet<SeedWaterBed>();
-            WaterTime = GetWaterTime();
+            //WaterTime = GetWaterTime();
 
         }
 
@@ -26,38 +26,42 @@ namespace Tracker.Models
             SeedWaterBed = new HashSet<SeedWaterBed>();
         }
 
-        public string GetWaterTime()
-        {
-            ////if (waterSchedule == null || datePlanted == null )
-            ////{
-            ////    return null;
-            //}
+        //public string GetWaterTime()
+        //{
+        //    ////if (waterSchedule == null || datePlanted == null )
+        //    ////{
+        //    ////    return null;
+        //    //}
+        //        foreach (SeedWaterBed waterBed in SeedWaterBed)
+        //    {
+        //        if (waterBed.Seed.WaterSchedule == null)
+        //        {
+        //            return ("10000");
+        //        }
 
-            foreach (SeedWaterBed waterBed in SeedWaterBed)
-            {
-
-                if (waterBed.Seed.WaterSchedule == "1")
-                {
-                    WaterTime = "604800000";
-                    //DatePlanted.AddDays(7);
-                }
-                else if (waterBed.Seed.WaterSchedule == "2")
-                {
-                    WaterTime = "259200000";
-                    //DatePlanted.AddDays(3);
-                }
-                else if (waterBed.Seed.WaterSchedule == "3")
-                {
-                    WaterTime = "1209600000";
-                    //DatePlanted.AddDays(14);
-                }
-                else if (waterBed.Seed.WaterSchedule == "4")
-                {
-                    WaterTime = "10000";
-                    //DatePlanted.AddSeconds(10);
-                }
-            }
-            return (WaterTime);
+        //        if (waterBed.Seed.WaterSchedule == "1")
+        //            {
+        //                WaterTime = "604800000";
+        //                //DatePlanted.AddDays(7);
+        //            }
+        //            else if (waterBed.Seed.WaterSchedule == "2")
+        //            {
+        //                WaterTime = "259200000";
+        //                //DatePlanted.AddDays(3);
+        //            }
+        //            else if (waterBed.Seed.WaterSchedule == "3")
+        //            {
+        //                WaterTime = "1209600000";
+        //                //DatePlanted.AddDays(14);
+        //            }
+        //            else if (waterBed.Seed.WaterSchedule == "4")
+        //            {
+        //                WaterTime = "10000";
+        //                //DatePlanted.AddSeconds(10);
+        //            }
+        //            return (WaterTime);
+        //        }
+           
 
 
 
@@ -97,5 +101,5 @@ namespace Tracker.Models
 
         }
     }
-}
+
 

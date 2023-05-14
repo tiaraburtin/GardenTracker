@@ -13,27 +13,32 @@ namespace Tracker.ViewModels
         // public Bed Bed { get; set; }
 
         public DateTime DatePlanted { get; set; }
+        public string? WaterTime { get; set; }
 
         public List<SelectListItem>? Seed { get; set; }
         public int SeedId { get; set; }
         public List<SelectListItem>? Waters { get; set; }
         public int BedId { get; set; }
 
-        // public AddWaterSeedToBedViewModel(Water? theWater, List<Seed>? seeds)
-        // {
-        //     Seed = new List<SelectListItem>();
-        //
-        //     foreach (var seed in seeds)
-        //     {
-        //         Seed.Add(new SelectListItem
-        //         {
-        //             Value = seed.Id.ToString(),
-        //             Text = seed.Name,
-        //         });
-        //     }
-        //
-        //     Water = theWater;
-        // }
+        public AddWaterSeedToBedViewModel(Water? theWater, List<Seed>? seeds)
+        {
+            Seed = new List<SelectListItem>();
+
+            foreach (var seed in seeds)
+            {
+                Seed.Add(new SelectListItem
+                {
+                    Value = seed.Id.ToString(),
+                    Text = seed.Name,
+                 
+                });
+
+                //WaterTime = seed.WaterTime;
+            }
+
+            
+            //Water = theWater;
+        }
 
         public AddWaterSeedToBedViewModel(Bed? theBed, List<Water>? waters)
         {

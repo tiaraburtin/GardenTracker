@@ -14,7 +14,7 @@ namespace Tracker.ViewModels
 
         public Water? Water { get; set; }
 
-        public bool? IsItTime { get; set; }
+        //public bool? IsItTime { get; set; }
 
         public List<SelectListItem>? Beds { get; set; }
 

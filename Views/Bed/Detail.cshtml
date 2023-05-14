@@ -10,45 +10,13 @@
     <script>
 
 
-
         window.addEventListener("load", function () {
-            if (@Model.WaterTime == "604800000") {
-                setTimeout(function () {
-                    window.alert("It's time to water your plant!");
-                }, 604800000); // 7 days delay for task 1
-            }
-
-            if (@Model.WaterTime == "259200000") {
-                setTimeout(function () {
-                    window.alert("It's time to water your plant!");
-                }, 259200000); // 3 day delay for task 2
-            }
-
-            if (@Model.WaterTime == "1209600000") {
-                setTimeout(function () {
-                    window.alert("It's time to water your plant!");
-                }, 1209600000); // 14 day delay for task 3
-            }
-            if (@Model.WaterTime == "10000") {
-                setTimeout(function () {
-                    window.alert("It's time to water your plant!");
-                }, 10000); // 10 second delay for task 3
+            setTimeout(function () {
+                window.alert("It's time to water your plant!");
+            }, 10000); // 10 second delay
         });
 
-        //var isItTime = //deleted an at sign here// Json.Serialize(Model.IsItTime);
-        //window.addEventListener("load", function () {
 
-        //    if ()
-        //    setTimeout(function () {
-        //    window.alert("It's time to water the plants!");
-        //     }, 5000);       
-
-            //if (isItTime == true) {
-                //window.alert("Hey! It's time to make it rain (;");
-                //console.log("It works");
-            //}
-            //console.log("Nope...");
-        });
     </script>
   
 

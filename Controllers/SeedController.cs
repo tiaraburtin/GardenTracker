@@ -46,7 +46,8 @@ namespace Tracker.Controllers
                 {
                     Name = viewModel.Name,
                     WaterSchedule = viewModel.WaterSchedule,
-                    HardinessZone = viewModel.HardinessZone
+                    HardinessZone = viewModel.HardinessZone,
+                    //    WaterTime = viewModel.WaterTime,
                 };
 
                 context.Seeds.Add(newSeed);

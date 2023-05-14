@@ -1,4 +1,5 @@
-﻿using System.Security.Policy;
+﻿using System;
+using System.Security.Policy;
 
 namespace Tracker.Models
 {
@@ -9,6 +10,7 @@ namespace Tracker.Models
         public string? Name { get; set; }
 
         public string? WaterSchedule { get; set; }
+        //public string? WaterTime { get; set; }
 
         public string? HardinessZone { get; set; }
 
@@ -20,12 +22,48 @@ namespace Tracker.Models
             //Beds = new List<Bed>();
             HardinessZone = hardinessZone;
             WaterSchedule = waterSchedule;
-           SeedWaterBed = new HashSet<SeedWaterBed>();
+            //WaterTime = ConvertWaterToTime();
+            SeedWaterBed = new HashSet<SeedWaterBed>();
 
         }
         public Seed()
         {
             SeedWaterBed = new HashSet<SeedWaterBed>();
         }
-    }
+
+        //public string ConvertWaterToTime()
+        //{
+        //    //    ////if (waterSchedule == null || datePlanted == null )
+        //    //    ////{
+        //    //    ////    return null;
+        //    //    //}
+
+        //    //foreach (SeedWaterBed waterBed in SeedWaterBed)
+        //    {
+
+        //        if (WaterSchedule == "1")
+        //        {
+        //            WaterTime = "604800000";
+        //            //DatePlanted.AddDays(7);
+        //        }
+        //        else if (WaterSchedule == "2")
+        //        {
+        //            WaterTime = "259200000";
+        //            //DatePlanted.AddDays(3);
+        //        }
+        //        else if (WaterSchedule == "3")
+        //        {
+        //            WaterTime = "1209600000";
+        //            //DatePlanted.AddDays(14);
+        //        }
+        //        else if (WaterSchedule == "4")
+        //        {
+        //            WaterTime = "10000";
+        //            //DatePlanted.AddSeconds(10);
+        //        }
+        //    }
+        //    return (WaterTime);
+        //    }
+
+}
 }

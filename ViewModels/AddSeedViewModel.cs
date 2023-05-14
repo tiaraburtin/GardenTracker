@@ -12,6 +12,7 @@ namespace Tracker.ViewModels
         public string? Name { get; set; }
         public Water? Water { get; set; }
 
+        public string? WaterTime { get; set; }
        
         public string? WaterSchedule { get; set; }
       

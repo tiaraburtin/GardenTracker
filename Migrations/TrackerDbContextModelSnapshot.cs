@@ -225,10 +225,6 @@ namespace Tracker.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("WaterTime")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.HasKey("Id");
 
                     b.ToTable("Bed", (string)null);
@@ -247,6 +243,9 @@ namespace Tracker.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("WaterSchedule")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("WaterTime")
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
