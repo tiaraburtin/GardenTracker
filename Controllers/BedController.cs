@@ -30,21 +30,30 @@ namespace Tracker.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            Bed bed = new Bed();
-            return View();
+            AddBedViewModel bed = new AddBedViewModel();
+            return View(bed);
         }
 
         [HttpPost]
-        public IActionResult AddBed(Bed bed)
+        public IActionResult AddBed(AddBedViewModel viewModel)
         {
             if (ModelState.IsValid)
-            {
-                context.Beds.Add(bed);
+                    {
+                Bed newBed = new Bed
+                {
+                    Name = viewModel.Name,
+                    //IsItTime = viewModel.IsItTime
+
+                };
+                    
+
+                context.Beds.Add(newBed);
+                      
                 context.SaveChanges();
 
                 return Redirect("/Bed/");
             }
-            return View("Add", bed);
+            return View("Add", viewModel);
         }
 
         //[HttpGet]

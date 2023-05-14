@@ -101,10 +101,10 @@ namespace Tracker.Controllers
 
                 //I NEED TO CALL THIS FUNCTION SOMEHWERE BUT WHERE?!
 
-                    //if (Bed.IsItTime())
-                    //{
-                    //    ViewBag.NeedsWaterAlert = true;
-                    //}
+                //if (IsItTime())
+                //{
+                //    ViewBag.NeedsWaterAlert = true;
+                //}
 
 
 

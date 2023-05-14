@@ -13,7 +13,9 @@ namespace Tracker.ViewModels
         public Bed? Bed { get; set; }
 
         public Water? Water { get; set; }
-       
+
+        public bool? IsItTime { get; set; }
+
         public List<SelectListItem>? Beds { get; set; }
 
         public AddBedViewModel(Water theWater, List<Bed> possibleBeds)

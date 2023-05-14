@@ -11,8 +11,8 @@ using Tracker.Data;
 namespace Tracker.Migrations
 {
     [DbContext(typeof(TrackerDbContext))]
-    [Migration("20230511145826_MigrationNew")]
-    partial class MigrationNew
+    [Migration("20230513234210_AnotherMigration")]
+    partial class AnotherMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -224,6 +224,10 @@ namespace Tracker.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("WaterTime")
                         .IsRequired()
                         .HasColumnType("longtext");
 

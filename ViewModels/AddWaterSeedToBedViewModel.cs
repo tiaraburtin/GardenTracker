@@ -47,7 +47,7 @@ namespace Tracker.ViewModels
                     
                 });
             }
-        
+            
             // Bed = theBed;
         }
 
