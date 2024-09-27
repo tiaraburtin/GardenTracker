@@ -1,15 +1,31 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Tracker.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
+builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
 
-var connectionString = "server=localhost;user=newuser;password=tracker;database=tracker";
+builder.Services.AddDefaultIdentity<IdentityUser>
+(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+    options.Password.RequireDigit = false;
+    options.Password.RequiredLength = 10;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireLowercase = false;
+}).AddEntityFrameworkStores<TrackerDbContext>();
+
+// Add services to the container.
+
+
+var connectionString = "server=localhost;user=newuser;password=tracker;database=Tracker";
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 32));
 
 builder.Services.AddDbContext<TrackerDbContext>(dbContextOptions => dbContextOptions.UseMySql(connectionString, serverVersion));
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,9 +40,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
-
+app.MapRazorPages();
+app.MapControllers();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

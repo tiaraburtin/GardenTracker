@@ -8,8 +8,6 @@
     <div class="form-group">
         <label asp-for="SeedId">Seed</label>
 
-
-@*use conditional in the creation of drop down list*@
         <select asp-for="SeedId" asp-items="Model.Seeds"></select>
 
         <span asp-validation-for="SeedId"></span>

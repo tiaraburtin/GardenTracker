@@ -3,7 +3,7 @@
 
 <form asp-controller="Seed" asp-action="Delete" method="post">
 <div class="text-center">
-    <h1>Current Seeds </h1>
+    <h1>Seeds Inventory </h1>
 
 @if (Model.Count == 0)
     {
@@ -15,33 +15,37 @@
          <tr>
          <th>Name</th>
          <th>Seed</th>
-         <th>Delete</th>
-         </tr>
-        @foreach (var seed in Model)
-         {
-          <tr>
-              <td>@seed.Id</td>
+                    <th>Edit</th>
+                    <th>Delete</th>
 
-               <td>
-                   <a asp-controller="Seed" asp-action="Detail" asp-route-id="@seed.Id">@seed.Name</a>     
-               </td>
+                </tr>
+                @foreach (var seed in Model)
+                {
+                    <tr>
+                        <td>@seed.Id</td>
 
-               <td>
-                   <input type="checkbox" name="SeedIds" value="@seed.Id" />
-               </td>
-                    
-                    
-             </tr>
-               
-         }
-            
-       </table>
-    }
+                        <td>
+                            <a asp-controller="Seed" asp-action="Detail" asp-route-id="@seed.Id">@seed.Name</a>
+                        </td>
+
+                        <td>
+                            <input type="checkbox" name="editIds" value="@seed.Id" />
+                        </td>
+
+                        <td>
+                            <input type="checkbox" name="deleteIds" value="@seed.Id" />
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        }
         <p><a asp-controller="Seed" asp-action="Add" class="btn btn-danger">Add Seed</a></p>
 
         <button type="submit" formaction="@Url.Action("DeleteSeed", "Seed")" class="btn btn-danger">Delete Selected Seeds</button>
+        <button type="submit" formaction="@Url.Action("GatherSeeds", "Seed")" class="btn btn-danger">Edit Selected Seeds</button>
 
 
-       
+
 </form>
 

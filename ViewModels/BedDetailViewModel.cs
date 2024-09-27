@@ -10,7 +10,9 @@ namespace Tracker.ViewModels
         public int BedId { get; set; }
         public string? Name { get; set; }
 
-        public Bed Bed { get; set; }
+        public Bed? Bed { get; set; }
+
+        public Seed? Seed { get; set; }
 
         public string SeedText { get; set; }
 
