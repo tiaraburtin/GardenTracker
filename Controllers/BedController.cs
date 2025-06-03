@@ -9,6 +9,8 @@ using Tracker.ViewModels;
 using Tracker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.CodeAnalysis.VisualBasic.Syntax;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using Tracker.Migrations;
 
 namespace Tracker.Controllers
 {
@@ -42,6 +44,8 @@ namespace Tracker.Controllers
                 Bed newBed = new Bed
                 {
                     Name = viewModel.Name,
+  
+
                     //IsItTime = viewModel.IsItTime
 
                 };
