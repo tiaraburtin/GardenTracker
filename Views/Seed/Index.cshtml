@@ -2,54 +2,39 @@
 @model List<Seed>
 
 <form asp-controller="Seed" asp-action="Delete" method="post">
-<div class="text-center">
-    <h1>Current Seeds </h1>
+    <div class="text-center">
+        <h1>Your Seeds</h1>
 
-@if (Model.Count == 0)
-    {
-       <p>No seeds have been created yet!</p>
-    }
-    else
-    {
-        if (Model != null) 
+        @if (Model == null || Model.Count == 0)
         {
+            <p>No seeds have been created yet!</p>
+        }
+        else
+        {
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                @foreach (var seed in Model)
+                {
+                    <div class="col">
+                        <div class="card seed-card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">@seed.Name</h5>
 
-        
-        <table class="table">
-         <tr>
-         <th>Name</th>
-         <th>Seed</th>
-         <th>Delete</th>
-         </tr>
-        @foreach (var seed in Model)
-         {
-          <tr>
-              <td>@seed.Id</td>
+                                <a asp-controller="Seed" asp-action="Detail" asp-route-id="@seed.Id" class="btn btn-seed">View</a>
 
-               <td>
-                   <a asp-controller="Seed" asp-action="Detail" asp-route-id="@seed.Id">@seed.Name</a>     
-               </td>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" name="SeedIds" value="@seed.Id" />
+                                    <label class="form-check-label">Select</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
 
-               <td>
-                   <input type="checkbox" name="SeedIds" value="@seed.Id" />
-               </td>
-                    
-                    
-             </tr>
-               
-         }
-            
-       </table>
-    }
-    }
-
-
-        </script>
-        <p><a asp-controller="Seed" asp-action="Add" class="btn btn-danger">Add Seed</a></p>
-
-        <button type="submit" formaction="@Url.Action("DeleteSeed", "Seed")" class="btn btn-danger">Delete Selected Seeds</button>
-
-
-       
+            <div class="text-center mt-4">
+                <a asp-controller="Seed" asp-action="Add" class="btn btn-add-seed me-3">Add a New Seed</a>
+                <button type="submit" formaction="@Url.Action("DeleteSeed", "Seed")" class="btn btn-danger">Delete Selected</button>
+            </div>
+        }
+    </div>
 </form>
-

@@ -2,42 +2,53 @@
 @model List<Bed>
 
 <form asp-controller="Bed" asp-action="Delete" method="post">
-<div class="text-center">
-<h1>Current Garden Beds </h1>
+    <div class="text-center">
+        <h1>Current Garden Beds</h1>
 
-@if (Model.Count == 0)
-{
-    <p>No Garden beds have been created yet!</p>
-}
-else
-{
-    <table class="table">
+        @if (Model.Count == 0)
+        {
+            <p>No Garden beds have been created yet!</p>
+        }
+        else
+        {
+            @* old code with tables
+        <table class="table">
         <tr>
-            <th>Id
-            <th>Garden Bed</th>
-            
-            <th>Delete</th>
+        <th>Id</th>
+        <th>Garden Bed</th>
+        <th>Delete</th>
         </tr>
         @foreach (var bed in Model)
         {
-            <tr>
-                <td>@bed.Id</td>
-
-
-                <td><a asp-controller="Bed" asp-action="Detail" asp-route-id="@bed.Id">@bed.Name</a></td>
-                
-           
-
-                <td>
-                    <input type="checkbox" name="BedIds" value="@bed.Id" />
-                </td>
-            </tr>
+        <tr>
+        <td>@bed.Id</td>
+        <td><a asp-controller="Bed" asp-action="Detail" asp-route-id="@bed.Id">@bed.Name</a></td>
+        <td>
+        <input type="checkbox" name="BedIds" value="@bed.Id" />
+        </td>
+        </tr>
         }
-    </table>
+        </table>
+        *@
 
-}
-    <p><a asp-controller="Bed" asp-action="Add" class="btn btn-danger">Add Garden</a></p>
+            <div class="garden-grid">
+                @foreach (var bed in Model)
+                {
+                    <div class="garden-bed-card">
+                        <input type="checkbox" name="BedIds" value="@bed.Id" class="delete-checkbox" />
+                        <a asp-controller="Bed" asp-action="Detail" asp-route-id="@bed.Id" class="bed-link">
+                            <div class="bed-name">@bed.Name</div>
+                            <div class="bed-id">ID: @bed.Id</div>
+                        </a>
+                    </div>
+                }
+            </div>
+        }
 
-    <button type="submit" formaction="@Url.Action("DeleteBed", "Bed")" class="btn btn-danger">Delete Selected Gardens</button>
+        <div class="text-center mt-4">
+            <a asp-controller="Bed" asp-action="Add" class="btn btn-add-seed me-3">Add Garden</a>
+            <button type="submit" formaction="@Url.Action("DeleteBed", "Bed")" class="btn btn-danger">Delete Selected Gardens</button>
+        </div>
+    </div>
+</form>
 
-    </form>

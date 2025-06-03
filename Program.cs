@@ -1,5 +1,6 @@
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System;
 using Tracker.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
@@ -16,10 +17,15 @@ builder.Services.AddDefaultIdentity<IdentityUser>
 }).AddEntityFrameworkStores<TrackerDbContext>();
 //Add services to the container.
 
-var connectionString = "server=localhost;user=newuser;password=tracker;database=Tracker";
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 32));
-builder.Services.AddDbContext<TrackerDbContext>(dbContextOptions => dbContextOptions.UseMySql(connectionString, serverVersion));
+
+builder.Services.AddDbContext<TrackerDbContext>(options =>
+    options.UseMySql(connectionString, serverVersion));
+
 var app = builder.Build();
+
+
 
 
 // Configure the HTTP request pipeline.

@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\tburt\\OneDrive\\Desktop\\LotusLightCodes\\harmonyproject\\GardenTracker\\wwwroot\\images\\fertilelandlogo.jpg",
+      "PackagePath": "staticwebassets\\images\\fertilelandlogo.jpg"
+    },
+    {
       "Id": "C:\\Users\\tburt\\OneDrive\\Desktop\\LotusLightCodes\\harmonyproject\\GardenTracker\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
